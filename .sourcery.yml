@@ -1,0 +1,9 @@
+sources:
+  - GitUser/Sources
+templates:
+  - tools/sourcery/templates
+output:
+  GitUserTests/Sources/Mocks/Sourcery 
+args:
+  autoMockableTestableImports:
+    - GitUser

@@ -1,0 +1,206 @@
+PODS:
+  - Alamofire (5.10.2)
+  - ArkanaKeys (1.0.0):
+    - ArkanaKeysInterfaces (~> 1.0.0)
+  - ArkanaKeysInterfaces (1.0.0)
+  - Factory (2.4.3)
+  - Firebase/CoreOnly (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+  - Firebase/Crashlytics (11.6.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 11.6.0)
+  - FirebaseCore (11.6.0):
+    - FirebaseCoreInternal (~> 11.6.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/Logger (~> 8.0)
+  - FirebaseCoreExtension (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+  - FirebaseCoreInternal (11.6.0):
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+  - FirebaseCrashlytics (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - FirebaseInstallations (~> 11.0)
+    - FirebaseRemoteConfigInterop (~> 11.0)
+    - FirebaseSessions (~> 11.0)
+    - GoogleDataTransport (~> 10.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - nanopb (~> 3.30910.0)
+    - PromisesObjC (~> 2.4)
+  - FirebaseInstallations (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - PromisesObjC (~> 2.4)
+  - FirebaseRemoteConfigInterop (11.6.0)
+  - FirebaseSessions (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - FirebaseCoreExtension (~> 11.6.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleDataTransport (~> 10.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - nanopb (~> 3.30910.0)
+    - PromisesSwift (~> 2.1)
+  - GoogleDataTransport (10.1.0):
+    - nanopb (~> 3.30910.0)
+    - PromisesObjC (~> 2.4)
+  - GoogleUtilities/Environment (8.0.2):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.0.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - "GoogleUtilities/NSData+zlib (8.0.2)":
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (8.0.2)
+  - GoogleUtilities/UserDefaults (8.0.2):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - JSONAPIMapper (1.1.1)
+  - KeychainAccess (4.2.2)
+  - KIF (3.10.0):
+    - KIF/Core (= 3.10.0)
+  - KIF/Core (3.10.0)
+  - KIF/IdentifierTests (3.10.0):
+    - KIF/Core
+  - Kingfisher (8.1.3)
+  - nanopb (3.30910.0):
+    - nanopb/decode (= 3.30910.0)
+    - nanopb/encode (= 3.30910.0)
+  - nanopb/decode (3.30910.0)
+  - nanopb/encode (3.30910.0)
+  - Nimble (12.3.0)
+  - NimbleExtension (0.1.1)
+  - OHHTTPStubs/Core (9.1.0)
+  - OHHTTPStubs/Default (9.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.1.0)
+  - OHHTTPStubs/Swift (9.1.0):
+    - OHHTTPStubs/Default
+  - PromisesObjC (2.4.0)
+  - PromisesSwift (2.4.0):
+    - PromisesObjC (= 2.4.0)
+  - Quick (7.6.2)
+  - R.swift (7.8.0)
+  - Sourcery (2.2.6):
+    - Sourcery/CLI-Only (= 2.2.6)
+  - Sourcery/CLI-Only (2.2.6)
+  - SwiftFormat/CLI (0.55.4)
+  - SwiftLint (0.57.1)
+  - Wormholy (1.7.0)
+  - xcbeautify (0.17.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - ArkanaKeys (from `./ArkanaKeys/ArkanaKeys`)
+  - ArkanaKeysInterfaces (from `./ArkanaKeys/ArkanaKeysInterfaces`)
+  - Factory
+  - Firebase/Crashlytics
+  - JSONAPIMapper (from `https://github.com/nimblehq/JSONMapper`, tag `1.1.1`)
+  - KeychainAccess
+  - KIF
+  - KIF/IdentifierTests
+  - Kingfisher
+  - Nimble (~> 12.0)
+  - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
+  - OHHTTPStubs/Swift
+  - Quick (~> 7.0)
+  - R.swift
+  - Sourcery
+  - SwiftFormat/CLI
+  - SwiftLint
+  - Wormholy
+  - xcbeautify
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Factory
+    - Firebase
+    - FirebaseCore
+    - FirebaseCoreExtension
+    - FirebaseCoreInternal
+    - FirebaseCrashlytics
+    - FirebaseInstallations
+    - FirebaseRemoteConfigInterop
+    - FirebaseSessions
+    - GoogleDataTransport
+    - GoogleUtilities
+    - KeychainAccess
+    - KIF
+    - Kingfisher
+    - nanopb
+    - Nimble
+    - OHHTTPStubs
+    - PromisesObjC
+    - PromisesSwift
+    - Quick
+    - R.swift
+    - Sourcery
+    - SwiftFormat
+    - SwiftLint
+    - Wormholy
+    - xcbeautify
+
+EXTERNAL SOURCES:
+  ArkanaKeys:
+    :path: "./ArkanaKeys/ArkanaKeys"
+  ArkanaKeysInterfaces:
+    :path: "./ArkanaKeys/ArkanaKeysInterfaces"
+  JSONAPIMapper:
+    :git: https://github.com/nimblehq/JSONMapper
+    :tag: 1.1.1
+  NimbleExtension:
+    :branch: master
+    :git: https://github.com/nimblehq/NimbleExtension
+
+CHECKOUT OPTIONS:
+  JSONAPIMapper:
+    :git: https://github.com/nimblehq/JSONMapper
+    :tag: 1.1.1
+  NimbleExtension:
+    :commit: 6a7d7c2b79a68dcdeaacc0b746e23088e79cafd1
+    :git: https://github.com/nimblehq/NimbleExtension
+
+SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  ArkanaKeys: 356555f467c55ae40ba074c1b4d9cb5c38a55f3d
+  ArkanaKeysInterfaces: 81d21923368b058e2b6fd932ec96855166ef6d19
+  Factory: 9d20d8cb56fc44b341d6dad1cf67dc93e9ae7788
+  Firebase: 374a441a91ead896215703a674d58cdb3e9d772b
+  FirebaseCore: 48b0dd707581cf9c1a1220da68223fb0a562afaa
+  FirebaseCoreExtension: 2d77d6430c16cf43ca2b04608302ed02b3598361
+  FirebaseCoreInternal: d98ab91e2d80a56d7b246856a8885443b302c0c2
+  FirebaseCrashlytics: b21c665fb50138766480bce73ebdb1aa30f7f300
+  FirebaseInstallations: efc0946fc756e4d22d8113f7c761948120322e8c
+  FirebaseRemoteConfigInterop: e75e348953352a000331eb77caf01e424248e176
+  FirebaseSessions: 9529d14180868e29a8da164b3a729c036204918b
+  GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
+  GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
+  JSONAPIMapper: 0d832d3b7d74281b150622a004f84171ded28a04
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  KIF: e0d42181aac4f5de06aa986ccf514588ab4ffe2f
+  Kingfisher: f2af9028b16baf9dc6c07c570072bc41cbf009ef
+  nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  Nimble: f8a8219d16f176429b951e8f7e72df5c23ceddc0
+  NimbleExtension: f831e53f13cca775bea8cd51e58327eadb87ef05
+  OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
+  Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
+  R.swift: f573269ca45b2ab066c082e363dd4c2b297b0d71
+  Sourcery: 4427fd22f0c12bd1ef75dd9045d50e01c17a43e1
+  SwiftFormat: 0184d1cd809c9d9e5e3f3c15c89fe0166f372788
+  SwiftLint: 92196976e597b9afec5dbe374810103e6c1d9d7c
+  Wormholy: ab1c8c2f02f58587a0941deb0088555ffbf039a1
+  xcbeautify: 6e2f57af5c3a86d490376d5758030a8dcc201c1b
+
+PODFILE CHECKSUM: 2b0c06b526925bb64da35ad50f38e95c0d064501
+
+COCOAPODS: 1.16.2
