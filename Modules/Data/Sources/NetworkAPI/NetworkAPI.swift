@@ -4,7 +4,7 @@
 
 import Alamofire
 
-final class NetworkAPI: NetworkAPIProtocol {
+public class NetworkAPI: NetworkAPIProtocol {
 
     private let decoder: JSONDecoder
 
@@ -12,7 +12,7 @@ final class NetworkAPI: NetworkAPIProtocol {
         self.decoder = decoder
     }
 
-    func performRequest<T: Decodable>(
+    public func performRequest<T: Decodable>(
         _ configuration: RequestConfiguration,
         for type: T.Type
     ) async throws -> T {

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.10.2)
+  - AlertToast (1.3.9)
   - ArkanaKeys (1.0.0):
     - ArkanaKeysInterfaces (~> 1.0.0)
   - ArkanaKeysInterfaces (1.0.0)
@@ -88,6 +89,12 @@ PODS:
     - PromisesObjC (= 2.4.0)
   - Quick (7.6.2)
   - R.swift (7.8.0)
+  - Realm (20.0.1):
+    - Realm/Headers (= 20.0.1)
+  - Realm/Headers (20.0.1)
+  - RealmSwift (20.0.1):
+    - Realm (= 20.0.1)
+  - Resolver (1.5.1)
   - Sourcery (2.2.6):
     - Sourcery/CLI-Only (= 2.2.6)
   - Sourcery/CLI-Only (2.2.6)
@@ -98,6 +105,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlertToast
   - ArkanaKeys (from `./ArkanaKeys/ArkanaKeys`)
   - ArkanaKeysInterfaces (from `./ArkanaKeys/ArkanaKeysInterfaces`)
   - Factory
@@ -112,6 +120,8 @@ DEPENDENCIES:
   - OHHTTPStubs/Swift
   - Quick (~> 7.0)
   - R.swift
+  - RealmSwift
+  - Resolver
   - Sourcery
   - SwiftFormat/CLI
   - SwiftLint
@@ -121,6 +131,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlertToast
     - Factory
     - Firebase
     - FirebaseCore
@@ -142,6 +153,9 @@ SPEC REPOS:
     - PromisesSwift
     - Quick
     - R.swift
+    - Realm
+    - RealmSwift
+    - Resolver
     - Sourcery
     - SwiftFormat
     - SwiftLint
@@ -170,6 +184,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  AlertToast: e8db15da727beff75500bcf33a78cd617f408fa1
   ArkanaKeys: 356555f467c55ae40ba074c1b4d9cb5c38a55f3d
   ArkanaKeysInterfaces: 81d21923368b058e2b6fd932ec96855166ef6d19
   Factory: 9d20d8cb56fc44b341d6dad1cf67dc93e9ae7788
@@ -195,12 +210,15 @@ SPEC CHECKSUMS:
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
   Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
   R.swift: f573269ca45b2ab066c082e363dd4c2b297b0d71
+  Realm: 9572204903ef28caeb3c03bb30c1147f354ee3e7
+  RealmSwift: d230b44017a55a1ba97de6a944da1fe3bedb92b5
+  Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
   Sourcery: 4427fd22f0c12bd1ef75dd9045d50e01c17a43e1
   SwiftFormat: 0184d1cd809c9d9e5e3f3c15c89fe0166f372788
   SwiftLint: 92196976e597b9afec5dbe374810103e6c1d9d7c
   Wormholy: ab1c8c2f02f58587a0941deb0088555ffbf039a1
   xcbeautify: 6e2f57af5c3a86d490376d5758030a8dcc201c1b
 
-PODFILE CHECKSUM: 2b0c06b526925bb64da35ad50f38e95c0d064501
+PODFILE CHECKSUM: 03d5b5cccf98efd03badf9a197a7b98982dcddab
 
 COCOAPODS: 1.16.2

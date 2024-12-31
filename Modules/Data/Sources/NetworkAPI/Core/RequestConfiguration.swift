@@ -5,7 +5,7 @@
 import Alamofire
 import Foundation
 
-protocol RequestConfiguration {
+public protocol RequestConfiguration {
 
     var baseURL: String { get }
 
@@ -36,4 +36,15 @@ extension RequestConfiguration {
     var headers: HTTPHeaders? { nil }
 
     var interceptor: RequestInterceptor? { nil }
+    
+    var encoding: ParameterEncoding {
+        switch method {
+            case .post:
+                return JSONEncoding.default
+            case .get:
+                return URLEncoding.default
+            default:
+                return JSONEncoding.default
+        }
+    }
 }

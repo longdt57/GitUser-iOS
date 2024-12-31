@@ -4,7 +4,7 @@
 
 import Foundation
 
-enum NetworkAPIError: Error {
+public enum NetworkAPIError: Error {
 
     case generic
     case dataNotFound
