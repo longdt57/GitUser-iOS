@@ -11,9 +11,11 @@ import Resolver
 
 public class GetGitUserUseCase {
 
-    public init() {}
+    public init(repository: GitUserRepository) {
+        self.repository = repository
+    }
 
-    @Injected var repository: GitUserRepository
+    private let repository: GitUserRepository
 
     // Use Future to wrap the async operation and return a Combine publisher
     public func invoke(since: Int, perPage: Int) -> AnyPublisher<[GitUserModel], Error> {

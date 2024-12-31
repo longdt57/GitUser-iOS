@@ -10,13 +10,6 @@ import Combine
 import Resolver
 import XCTest
 
-extension Resolver: ResolverRegistering {
-    public static func registerAllServices() {
-        defaultScope = .graph
-        register(GitUserDetailRepository.self) { MockGitUserDetailRepository() }
-    }
-}
-
 final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
 
     private var useCase: GetGitUserDetailRemoteUseCase!
@@ -38,7 +31,7 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
     override func setUp() {
         super.setUp()
         repositoryMock = MockGitUserDetailRepository()
-        useCase = GetGitUserDetailRemoteUseCase()
+        useCase = GetGitUserDetailRemoteUseCase(repository: repositoryMock)
         cancellables = []
     }
 

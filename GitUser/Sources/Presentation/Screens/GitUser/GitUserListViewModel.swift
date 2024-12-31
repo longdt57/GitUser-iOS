@@ -12,7 +12,12 @@ import Resolver
 
 class GitUserListViewModel: BaseViewModel {
 
-    @Injected var useCase: GetGitUserUseCase
+    private let useCase: GetGitUserUseCase
+
+    init(useCase: GetGitUserUseCase, dispatchQueueProvider: DispatchQueueProvider) {
+        self.useCase = useCase
+        super.init(dispatchQueueProvider: dispatchQueueProvider)
+    }
 
     @Published private(set) var uiModel: GitUserListUiModel = .init()
 

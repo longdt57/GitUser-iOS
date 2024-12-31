@@ -12,7 +12,11 @@ import Resolver
 
 open class BaseViewModel: ObservableObject {
 
-    @Injected var dispatchQueueProvider: DispatchQueueProvider
+    let dispatchQueueProvider: DispatchQueueProvider
+
+    init(dispatchQueueProvider: DispatchQueueProvider) {
+        self.dispatchQueueProvider = dispatchQueueProvider
+    }
 
     @Published var loading: LoadingState = .none
     @Published var error: ErrorState = .none

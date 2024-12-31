@@ -6,14 +6,16 @@
 //
 
 import Domain
-import Resolver
 
 public class GitUserDetailRepositoryImpl: GitUserDetailRepository {
 
-    public init() {}
+    public init(networkAPI: NetworkAPIProtocol, gitUserDetailLocalSource: GitUserDetailLocalSource) {
+        self.networkAPI = networkAPI
+        self.gitUserDetailLocalSource = gitUserDetailLocalSource
+    }
 
-    @Injected var networkAPI: NetworkAPIProtocol
-    @Injected var gitUserDetailLocalSource: GitUserDetailLocalSource
+    private let networkAPI: NetworkAPIProtocol
+    private let gitUserDetailLocalSource: GitUserDetailLocalSource
 
     public func getRemote(userName: String) async throws -> GitUserDetailModel {
         let configuration = GitUserConfiguration.getUserDetail(username: userName)

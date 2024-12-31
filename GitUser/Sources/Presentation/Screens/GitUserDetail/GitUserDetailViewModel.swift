@@ -8,15 +8,26 @@
 import Combine
 import Domain
 import Foundation
-import Resolver
 
 class GitUserDetailViewModel: BaseViewModel {
 
     @Published var uiModel = GitUserDetailUiModel()
 
-    @Injected var getRemoteUseCase: GetGitUserDetailRemoteUseCase
-    @Injected var getLocalUseCase: GetGitUserDetailLocalUseCase
-    @Injected var gitUserDetailUiMapper: GitUserDetailUiMapper
+    private let getRemoteUseCase: GetGitUserDetailRemoteUseCase
+    private let getLocalUseCase: GetGitUserDetailLocalUseCase
+    private let gitUserDetailUiMapper: GitUserDetailUiMapper
+
+    init(
+        dispatchQueueProvider: DispatchQueueProvider,
+        getRemoteUseCase: GetGitUserDetailRemoteUseCase,
+        getLocalUseCase: GetGitUserDetailLocalUseCase,
+        gitUserDetailUiMapper: GitUserDetailUiMapper
+    ) {
+        self.getRemoteUseCase = getRemoteUseCase
+        self.getLocalUseCase = getLocalUseCase
+        self.gitUserDetailUiMapper = gitUserDetailUiMapper
+        super.init(dispatchQueueProvider: dispatchQueueProvider)
+    }
 
     func handleAction(action: GitUserDetailAction) {
         switch action {

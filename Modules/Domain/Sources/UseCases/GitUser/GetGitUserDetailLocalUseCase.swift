@@ -11,9 +11,11 @@ import Resolver
 
 public class GetGitUserDetailLocalUseCase {
 
-    public init() {}
+    public init(repository: GitUserDetailRepository) {
+        self.repository = repository
+    }
 
-    @Injected var repository: GitUserDetailRepository
+    private let repository: GitUserDetailRepository
 
     // Convert to return an AnyPublisher
     public func invoke(userName: String) -> AnyPublisher<GitUserDetailModel, Error> {
