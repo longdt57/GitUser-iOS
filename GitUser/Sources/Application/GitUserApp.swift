@@ -4,7 +4,7 @@ import SwiftUI
 struct GitUserApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            GitUserListScreen()
         }
     }
 }

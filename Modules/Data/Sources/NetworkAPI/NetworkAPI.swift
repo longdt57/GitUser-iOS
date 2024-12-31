@@ -8,7 +8,7 @@ public class NetworkAPI: NetworkAPIProtocol {
 
     private let decoder: JSONDecoder
 
-    init(decoder: JSONDecoder = JSONDecoder()) {
+    public init(decoder: JSONDecoder = JSONDecoder()) {
         self.decoder = decoder
     }
 

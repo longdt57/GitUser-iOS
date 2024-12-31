@@ -9,6 +9,8 @@ import RealmSwift
 
 public class GitUserDetailLocalSource {
     
+    public init() {}
+    
     // Fetch the user detail by login
     func getUserDetailByLogin(login: String) throws -> GitUserDetail? {
         let realm = try! Realm()

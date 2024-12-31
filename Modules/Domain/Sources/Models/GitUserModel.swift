@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct GitUserModel {
-    let id: Int64
-    let login: String
-    let avatarUrl: String?
-    let htmlUrl: String?
+public struct GitUserModel: Identifiable, Equatable {
+    public let id: Int64
+    public let login: String
+    public let avatarUrl: String?
+    public let htmlUrl: String?
     
     public init(id: Int64, login: String, avatarUrl: String?, htmlUrl: String?) {
         self.id = id

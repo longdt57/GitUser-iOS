@@ -65,6 +65,29 @@
 		D181923A2D243C67003103D1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192382D243C67003103D1 /* R.generated.swift */; };
 		D181923D2D243CA1003103D1 /* GitUserDetailUiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181923B2D243CA1003103D1 /* GitUserDetailUiModel.swift */; };
 		D181923E2D243CA1003103D1 /* GitUserListUiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181923C2D243CA1003103D1 /* GitUserListUiModel.swift */; };
+		D18192442D243D5D003103D1 /* AppHorizontalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181923F2D243D5D003103D1 /* AppHorizontalDivider.swift */; };
+		D18192452D243D5D003103D1 /* LinkText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192402D243D5D003103D1 /* LinkText.swift */; };
+		D18192462D243D5D003103D1 /* UserAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192412D243D5D003103D1 /* UserAvatar.swift */; };
+		D18192472D243D5D003103D1 /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192422D243D5D003103D1 /* UserCard.swift */; };
+		D181924C2D243D65003103D1 /* FollowerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192482D243D64003103D1 /* FollowerFormatter.swift */; };
+		D181924D2D243D65003103D1 /* GitUserDetailUiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181924A2D243D64003103D1 /* GitUserDetailUiMapper.swift */; };
+		D18192612D243D72003103D1 /* GitUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181924E2D243D71003103D1 /* GitUserList.swift */; };
+		D18192622D243D72003103D1 /* GitUserListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181924F2D243D71003103D1 /* GitUserListCard.swift */; };
+		D18192632D243D72003103D1 /* GitUserListEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192502D243D71003103D1 /* GitUserListEmpty.swift */; };
+		D18192642D243D72003103D1 /* GitUserListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192512D243D71003103D1 /* GitUserListItem.swift */; };
+		D18192652D243D72003103D1 /* GitUserListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192532D243D71003103D1 /* GitUserListAction.swift */; };
+		D18192662D243D72003103D1 /* GitUserListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192542D243D71003103D1 /* GitUserListScreen.swift */; };
+		D18192672D243D72003103D1 /* GitUserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192552D243D71003103D1 /* GitUserListViewModel.swift */; };
+		D18192682D243D72003103D1 /* GitUserDetailBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192572D243D71003103D1 /* GitUserDetailBlog.swift */; };
+		D18192692D243D72003103D1 /* GitUserDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192582D243D71003103D1 /* GitUserDetailCard.swift */; };
+		D181926A2D243D72003103D1 /* GitUserDetailFollows.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192592D243D71003103D1 /* GitUserDetailFollows.swift */; };
+		D181926B2D243D72003103D1 /* GitUserDetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181925A2D243D71003103D1 /* GitUserDetailLocation.swift */; };
+		D181926C2D243D72003103D1 /* GitUserDetailAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181925C2D243D71003103D1 /* GitUserDetailAction.swift */; };
+		D181926D2D243D72003103D1 /* GitUserDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181925D2D243D71003103D1 /* GitUserDetailScreen.swift */; };
+		D181926E2D243D72003103D1 /* GitUserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181925E2D243D71003103D1 /* GitUserDetailViewModel.swift */; };
+		D18192702D243E93003103D1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181926F2D243E93003103D1 /* StringExtension.swift */; };
+		D18192722D243ED2003103D1 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192712D243ED2003103D1 /* BoolExtension.swift */; };
+		D18192752D243F86003103D1 /* Resolver+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18192732D243F86003103D1 /* Resolver+Injection.swift */; };
 		D6C90DCB5BD71F0F76B4FEAC /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD0D5F9A6753827C2074981 /* Data.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA5CA649ECAA3E247A3B3C60 /* GitUserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB50EA191ED0E7F0A6806D /* GitUserApp.swift */; };
 		ED18AD8D387CAFC126DCC41A /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F05CF29BC6CD4FFF76D970 /* NetworkAPI.swift */; };
@@ -280,6 +303,29 @@
 		D18192382D243C67003103D1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D181923B2D243CA1003103D1 /* GitUserDetailUiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailUiModel.swift; sourceTree = "<group>"; };
 		D181923C2D243CA1003103D1 /* GitUserListUiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserListUiModel.swift; sourceTree = "<group>"; };
+		D181923F2D243D5D003103D1 /* AppHorizontalDivider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHorizontalDivider.swift; sourceTree = "<group>"; };
+		D18192402D243D5D003103D1 /* LinkText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkText.swift; sourceTree = "<group>"; };
+		D18192412D243D5D003103D1 /* UserAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAvatar.swift; sourceTree = "<group>"; };
+		D18192422D243D5D003103D1 /* UserCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		D18192482D243D64003103D1 /* FollowerFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerFormatter.swift; sourceTree = "<group>"; };
+		D181924A2D243D64003103D1 /* GitUserDetailUiMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailUiMapper.swift; sourceTree = "<group>"; };
+		D181924E2D243D71003103D1 /* GitUserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserList.swift; sourceTree = "<group>"; };
+		D181924F2D243D71003103D1 /* GitUserListCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserListCard.swift; sourceTree = "<group>"; };
+		D18192502D243D71003103D1 /* GitUserListEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserListEmpty.swift; sourceTree = "<group>"; };
+		D18192512D243D71003103D1 /* GitUserListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserListItem.swift; sourceTree = "<group>"; };
+		D18192532D243D71003103D1 /* GitUserListAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserListAction.swift; sourceTree = "<group>"; };
+		D18192542D243D71003103D1 /* GitUserListScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserListScreen.swift; sourceTree = "<group>"; };
+		D18192552D243D71003103D1 /* GitUserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserListViewModel.swift; sourceTree = "<group>"; };
+		D18192572D243D71003103D1 /* GitUserDetailBlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailBlog.swift; sourceTree = "<group>"; };
+		D18192582D243D71003103D1 /* GitUserDetailCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailCard.swift; sourceTree = "<group>"; };
+		D18192592D243D71003103D1 /* GitUserDetailFollows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailFollows.swift; sourceTree = "<group>"; };
+		D181925A2D243D71003103D1 /* GitUserDetailLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailLocation.swift; sourceTree = "<group>"; };
+		D181925C2D243D71003103D1 /* GitUserDetailAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailAction.swift; sourceTree = "<group>"; };
+		D181925D2D243D71003103D1 /* GitUserDetailScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailScreen.swift; sourceTree = "<group>"; };
+		D181925E2D243D71003103D1 /* GitUserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserDetailViewModel.swift; sourceTree = "<group>"; };
+		D181926F2D243E93003103D1 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D18192712D243ED2003103D1 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
+		D18192732D243F86003103D1 /* Resolver+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Resolver+Injection.swift"; sourceTree = "<group>"; };
 		D6D1D064249C6F9D239C5F77 /* Pods-GitUser-GitUserKIFUITests.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitUser-GitUserKIFUITests.debug production.xcconfig"; path = "Target Support Files/Pods-GitUser-GitUserKIFUITests/Pods-GitUser-GitUserKIFUITests.debug production.xcconfig"; sourceTree = "<group>"; };
 		D807A19872FA85361FB6A615 /* Pods-GitUser.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitUser.release staging.xcconfig"; path = "Target Support Files/Pods-GitUser/Pods-GitUser.release staging.xcconfig"; sourceTree = "<group>"; };
 		D9226AC1302612CD0413F9CA /* DomainTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = DomainTests.plist; sourceTree = "<group>"; };
@@ -507,6 +553,7 @@
 		384E5DAEE45A3F4C1633657A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D18192742D243F86003103D1 /* Injection */,
 				F9D2D861A0FCAFC58DA610E5 /* Application */,
 				F38B7B97E663C7AA4EE63A59 /* Constants */,
 				AFA29C220FA3789801D92D24 /* Presentation */,
@@ -762,6 +809,8 @@
 		939DA4EE2E514E12208B14D8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D18192712D243ED2003103D1 /* BoolExtension.swift */,
+				D181926F2D243E93003103D1 /* StringExtension.swift */,
 				D44FC07585EEDF12A39D9DEE /* Foundation */,
 				47BC6169B6D748BC730DF772 /* UIKit */,
 			);
@@ -811,6 +860,9 @@
 		AFA29C220FA3789801D92D24 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D18192602D243D71003103D1 /* Screens */,
+				D181924B2D243D64003103D1 /* Mapper */,
+				D18192432D243D5D003103D1 /* Components */,
 				D18192212D243AEF003103D1 /* Supports */,
 				C9CC59D23568DA870DE3E4CF /* Coordinators */,
 				C2ED2D33E4A3F0524A702AD2 /* Models */,
@@ -1001,6 +1053,95 @@
 				D18192382D243C67003103D1 /* R.generated.swift */,
 			);
 			path = Rswift;
+			sourceTree = "<group>";
+		};
+		D18192432D243D5D003103D1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D181923F2D243D5D003103D1 /* AppHorizontalDivider.swift */,
+				D18192402D243D5D003103D1 /* LinkText.swift */,
+				D18192412D243D5D003103D1 /* UserAvatar.swift */,
+				D18192422D243D5D003103D1 /* UserCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D18192492D243D64003103D1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D18192482D243D64003103D1 /* FollowerFormatter.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D181924B2D243D64003103D1 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				D18192492D243D64003103D1 /* Util */,
+				D181924A2D243D64003103D1 /* GitUserDetailUiMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		D18192522D243D71003103D1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D181924E2D243D71003103D1 /* GitUserList.swift */,
+				D181924F2D243D71003103D1 /* GitUserListCard.swift */,
+				D18192502D243D71003103D1 /* GitUserListEmpty.swift */,
+				D18192512D243D71003103D1 /* GitUserListItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D18192562D243D71003103D1 /* GitUser */ = {
+			isa = PBXGroup;
+			children = (
+				D18192522D243D71003103D1 /* Components */,
+				D18192532D243D71003103D1 /* GitUserListAction.swift */,
+				D18192542D243D71003103D1 /* GitUserListScreen.swift */,
+				D18192552D243D71003103D1 /* GitUserListViewModel.swift */,
+			);
+			path = GitUser;
+			sourceTree = "<group>";
+		};
+		D181925B2D243D71003103D1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D18192572D243D71003103D1 /* GitUserDetailBlog.swift */,
+				D18192582D243D71003103D1 /* GitUserDetailCard.swift */,
+				D18192592D243D71003103D1 /* GitUserDetailFollows.swift */,
+				D181925A2D243D71003103D1 /* GitUserDetailLocation.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D181925F2D243D71003103D1 /* GitUserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D181925B2D243D71003103D1 /* Components */,
+				D181925C2D243D71003103D1 /* GitUserDetailAction.swift */,
+				D181925D2D243D71003103D1 /* GitUserDetailScreen.swift */,
+				D181925E2D243D71003103D1 /* GitUserDetailViewModel.swift */,
+			);
+			path = GitUserDetail;
+			sourceTree = "<group>";
+		};
+		D18192602D243D71003103D1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D18192562D243D71003103D1 /* GitUser */,
+				D181925F2D243D71003103D1 /* GitUserDetail */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D18192742D243F86003103D1 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				D18192732D243F86003103D1 /* Resolver+Injection.swift */,
+			);
+			path = Injection;
 			sourceTree = "<group>";
 		};
 		D237A8B371A2A51DCDD70BAC /* Data */ = {
@@ -1750,22 +1891,45 @@
 			files = (
 				D18192302D243B42003103D1 /* View+Loading+Error.swift in Sources */,
 				DA5CA649ECAA3E247A3B3C60 /* GitUserApp.swift in Sources */,
+				D18192612D243D72003103D1 /* GitUserList.swift in Sources */,
 				06CB85C056F7B48E9C76D319 /* Constants+API.swift in Sources */,
 				D181923E2D243CA1003103D1 /* GitUserListUiModel.swift in Sources */,
+				D18192662D243D72003103D1 /* GitUserListScreen.swift in Sources */,
 				D181922D2D243B42003103D1 /* LoadingState.swift in Sources */,
+				D181926A2D243D72003103D1 /* GitUserDetailFollows.swift in Sources */,
+				D18192462D243D5D003103D1 /* UserAvatar.swift in Sources */,
+				D18192672D243D72003103D1 /* GitUserListViewModel.swift in Sources */,
+				D18192652D243D72003103D1 /* GitUserListAction.swift in Sources */,
+				D18192702D243E93003103D1 /* StringExtension.swift in Sources */,
+				D18192442D243D5D003103D1 /* AppHorizontalDivider.swift in Sources */,
+				D181926D2D243D72003103D1 /* GitUserDetailScreen.swift in Sources */,
+				D181924D2D243D65003103D1 /* GitUserDetailUiMapper.swift in Sources */,
+				D18192692D243D72003103D1 /* GitUserDetailCard.swift in Sources */,
+				D181926E2D243D72003103D1 /* GitUserDetailViewModel.swift in Sources */,
+				D18192682D243D72003103D1 /* GitUserDetailBlog.swift in Sources */,
 				BE110B673D20EB44ECEE6224 /* Constants.swift in Sources */,
 				D18192322D243B42003103D1 /* View+ToastUI.swift in Sources */,
 				D18192332D243B42003103D1 /* ErrorState.swift in Sources */,
 				10944AFBCE9773A949F079C8 /* HomeView.swift in Sources */,
 				D181923A2D243C67003103D1 /* R.generated.swift in Sources */,
+				D181926C2D243D72003103D1 /* GitUserDetailAction.swift in Sources */,
+				D18192642D243D72003103D1 /* GitUserListItem.swift in Sources */,
 				23197682031D2AD3325FA89F /* Optional+Unwrap.swift in Sources */,
+				D18192622D243D72003103D1 /* GitUserListCard.swift in Sources */,
+				D18192452D243D5D003103D1 /* LinkText.swift in Sources */,
+				D181926B2D243D72003103D1 /* GitUserDetailLocation.swift in Sources */,
 				D181922F2D243B42003103D1 /* DispatchQueueProvider.swift in Sources */,
 				D181922C2D243B42003103D1 /* BaseViewModel.swift in Sources */,
+				D18192722D243ED2003103D1 /* BoolExtension.swift in Sources */,
+				D18192472D243D5D003103D1 /* UserCard.swift in Sources */,
 				D181923D2D243CA1003103D1 /* GitUserDetailUiModel.swift in Sources */,
 				BE6FF2E424089F2CB500301F /* Color+Application.swift in Sources */,
+				D181924C2D243D65003103D1 /* FollowerFormatter.swift in Sources */,
 				8A60E33CC73B787E8E4D6D68 /* UIView+Subviews.swift in Sources */,
 				BEB4DAB9BA540452249B23C9 /* Typealiases.swift in Sources */,
 				D181922E2D243B42003103D1 /* DefaultDispatchQueueProvider.swift in Sources */,
+				D18192752D243F86003103D1 /* Resolver+Injection.swift in Sources */,
+				D18192632D243D72003103D1 /* GitUserListEmpty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

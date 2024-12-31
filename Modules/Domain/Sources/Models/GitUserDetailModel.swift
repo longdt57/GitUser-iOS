@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GitUserDetailModel: Identifiable {
+public struct GitUserDetailModel: Identifiable, Equatable {
     public let id: Int64
     public let login: String
     public let name: String?

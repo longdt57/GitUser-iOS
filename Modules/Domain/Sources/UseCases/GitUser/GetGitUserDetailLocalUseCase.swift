@@ -11,10 +11,12 @@ import Combine
 
 public class GetGitUserDetailLocalUseCase {
     
+    public init() {}
+    
     @Injected var repository: GitUserDetailRepository
     
     // Convert to return an AnyPublisher
-    func invoke(userName: String) -> AnyPublisher<GitUserDetailModel, Error> {
+    public func invoke(userName: String) -> AnyPublisher<GitUserDetailModel, Error> {
         // Wrap the async call in a Combine publisher (Future in this case)
         return Future { promise in
             Task {

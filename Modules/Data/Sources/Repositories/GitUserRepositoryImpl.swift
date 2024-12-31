@@ -11,6 +11,8 @@ import Domain
 
 public class GitUserRepositoryImpl : GitUserRepository {
     
+    public init() {}
+    
     @Injected var networkAPI: NetworkAPIProtocol
     @Injected var gitUserLocalSource: GitUserLocalSource
     

@@ -9,6 +9,10 @@ import RealmSwift
 
 public class GitUserLocalSource {
     
+    public init() {
+        
+    }
+    
     func getUsers(since: Int, perPage: Int) throws -> [GitUser] {
         let realm = try! Realm()
         
