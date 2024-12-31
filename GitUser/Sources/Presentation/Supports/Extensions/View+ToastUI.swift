@@ -5,13 +5,13 @@
 //  Created by Long Do on 06/10/2022.
 //
 
-import SwiftUI
 import AlertToast
+import SwiftUI
 
 extension View {
-    
+
     func showToast(isPresenting: Binding<Bool>, message: String) -> some View {
-        self.toast(isPresenting: isPresenting) {
+        toast(isPresenting: isPresenting) {
             AlertToast(type: .regular, subTitle: message)
         }
     }

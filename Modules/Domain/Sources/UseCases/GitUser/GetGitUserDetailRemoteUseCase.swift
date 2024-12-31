@@ -5,16 +5,16 @@
 //  Created by Long Do on 30/12/2024.
 //
 
+import Combine
 import Foundation
 import Resolver
-import Combine
 
 public class GetGitUserDetailRemoteUseCase {
-    
+
     public init() {}
-    
+
     @Injected var repository: GitUserDetailRepository
-    
+
     // Convert to return an AnyPublisher
     public func invoke(userName: String) -> AnyPublisher<GitUserDetailModel, Error> {
         // Wrap the async call in a Combine publisher (Future in this case)
@@ -28,6 +28,6 @@ public class GetGitUserDetailRemoteUseCase {
                 }
             }
         }
-        .eraseToAnyPublisher()  // Convert to AnyPublisher
+        .eraseToAnyPublisher() // Convert to AnyPublisher
     }
 }

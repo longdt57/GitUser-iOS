@@ -16,7 +16,7 @@ public struct GitUserDetailModel: Identifiable, Equatable {
     public let location: String?
     public let followers: Int
     public let following: Int
-    
+
     // Public initializer
     public init(
         id: Int64,
@@ -38,4 +38,3 @@ public struct GitUserDetailModel: Identifiable, Equatable {
         self.following = following
     }
 }
-

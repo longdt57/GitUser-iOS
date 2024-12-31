@@ -11,14 +11,14 @@ struct GitUserListItem: View {
     let title: String
     let avatarUrl: String?
     let htmlUrl: String?
-    
+
     var body: some View {
         HStack(alignment: .top) {
             UserAvatar(avatarUrl: avatarUrl)
                 .frame(width: 120, height: 120)
-            
+
             Spacer().frame(width: 12)
-            
+
             VStack(alignment: .leading) {
                 GitUserTitle(title: title)
                 AppHorizontalDivider()
@@ -32,7 +32,7 @@ struct GitUserListItem: View {
 
 struct GitUserTitle: View {
     let title: String
-    
+
     var body: some View {
         Text(title)
             .font(.title2)
@@ -52,4 +52,3 @@ struct GitUserListItem_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
-

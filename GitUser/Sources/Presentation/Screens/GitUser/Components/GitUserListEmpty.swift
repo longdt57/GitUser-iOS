@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GitUserListEmpty: View {
     let onRefresh: () -> Void
-    
+
     var body: some View {
         VStack {
             Button(action: onRefresh) {
@@ -31,4 +31,3 @@ struct GitUserListEmpty_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
-

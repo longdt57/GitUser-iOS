@@ -10,4 +10,3 @@ import Foundation
 enum GitUserDetailAction {
     case setUserLogin(login: String)
 }
-

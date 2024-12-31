@@ -1,5 +1,5 @@
 //
-//  UserDetailCard.swift
+//  GitUserDetailCard.swift
 //  iOS MVVM
 //
 //  Created by Long Do on 31/12/2024.
@@ -11,7 +11,7 @@ struct GitUserDetailCard: View {
     let name: String
     let avatarUrl: String
     let location: String
-    
+
     var body: some View {
         UserCard {
             GitUserDetailItem(
@@ -28,7 +28,7 @@ struct GitUserDetailItem: View {
     let name: String
     let avatarUrl: String
     let location: String
-    
+
     var body: some View {
         HStack(alignment: .top) {
             UserAvatar(avatarUrl: avatarUrl).frame(width: 120, height: 120)
@@ -44,7 +44,7 @@ struct GitUserDetailItem: View {
 
 struct GitUserDetailTitle: View {
     let title: String
-    
+
     var body: some View {
         Text(title)
             .font(.title2)

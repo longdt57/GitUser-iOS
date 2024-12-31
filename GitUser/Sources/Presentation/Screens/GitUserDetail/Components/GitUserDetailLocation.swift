@@ -9,15 +9,15 @@ import SwiftUI
 
 struct GitUserDetailLocation: View {
     let location: String
-    
+
     var body: some View {
         HStack(alignment: .center) {
             Image(systemName: "mappin.and.ellipse") // SF Symbol for "Place" equivalent
                 .resizable()
                 .frame(width: 16, height: 16)
-            
+
             Spacer().frame(width: 8)
-            
+
             Text(location)
                 .font(.body)
                 .fontWeight(.regular)
@@ -33,4 +33,3 @@ struct GitUserDetailLocation_Previews: PreviewProvider {
             .padding()
     }
 }
-

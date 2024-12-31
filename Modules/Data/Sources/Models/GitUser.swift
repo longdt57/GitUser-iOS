@@ -5,16 +5,16 @@
 //  Created by Long Do on 30/12/2024.
 //
 
+import Domain
 import Foundation
 import RealmSwift
-import Domain
 
 public class GitUser: Object, Codable {
     @Persisted(primaryKey: true) var id: Int64
     @Persisted var login: String
     @Persisted var avatarUrl: String?
     @Persisted var htmlUrl: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case login

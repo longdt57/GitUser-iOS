@@ -5,16 +5,14 @@
 //  Created by Do, LongThanh | MDSD on 2024/11/25.
 //
 
-
-public extension Optional where Wrapped == Bool {
+extension Optional where Wrapped == Bool {
 
     public var orFalse: Bool {
         return self ?? false
     }
-
 }
 
-public extension Bool {
+extension Bool {
     public func not() -> Bool {
         return !self
     }

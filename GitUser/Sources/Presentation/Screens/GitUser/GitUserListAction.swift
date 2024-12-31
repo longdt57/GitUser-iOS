@@ -11,4 +11,3 @@ enum GitUserListAction {
     case loadIfEmpty
     case loadMore
 }
-

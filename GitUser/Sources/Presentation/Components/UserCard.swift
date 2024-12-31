@@ -9,18 +9,18 @@ import SwiftUI
 
 struct UserCard<Content: View>: View {
     let content: Content
-    
+
     init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
-    
+
     var body: some View {
         ZStack {
             // Background
             RoundedRectangle(cornerRadius: 8)
                 .fill(Color.white) // Card background color (you can adjust)
                 .shadow(radius: 4) // Card shadow (elevation effect)
-            
+
             content
         }
     }
@@ -43,4 +43,3 @@ struct UserCard_Previews: PreviewProvider {
         .frame(height: 80)
     }
 }
-

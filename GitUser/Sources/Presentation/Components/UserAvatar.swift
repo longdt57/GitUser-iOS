@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct UserAvatar: View {
-    
+
     var avatarUrl: String?
-    
+
     init(avatarUrl: String?) {
         self.avatarUrl = avatarUrl
     }
-    
+
     var body: some View {
         ZStack {
             // AsyncImage for loading the avatar
@@ -22,36 +22,36 @@ struct UserAvatar: View {
                 url: URL(string: avatarUrl ?? ""),
                 content: { phase in
                     switch phase {
-                        case .empty:
-                            // Placeholder state
-                            Image("ImageAvatarPlaceHolder")
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .padding(4)
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .padding(4)
-                        case .failure:
-                            // Error state
-                            Image("ImageAvatarPlaceHolder")
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .padding(4)
-                        @unknown default:
-                            EmptyView()
+                    case .empty:
+                        // Placeholder state
+                        Image("ImageAvatarPlaceHolder")
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .padding(4)
+                    case let .success(image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .padding(4)
+                    case .failure:
+                        // Error state
+                        Image("ImageAvatarPlaceHolder")
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .padding(4)
+                    @unknown default:
+                        EmptyView()
                     }
                 }
             )
-            .clipShape(Circle())  // Circle shape for the avatar
-            .padding(4)  // Padding inside the circle
+            .clipShape(Circle()) // Circle shape for the avatar
+            .padding(4) // Padding inside the circle
         }
-        .background(RoundedRectangle(cornerRadius: 8) .fill(Color.gray.opacity(0.2)))
-        .clipShape(RoundedRectangle(cornerRadius: 8))  // Ensure the background is clipped
+        .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.2)))
+        .clipShape(RoundedRectangle(cornerRadius: 8)) // Ensure the background is clipped
     }
 }
 

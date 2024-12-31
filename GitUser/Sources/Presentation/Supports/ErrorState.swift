@@ -10,7 +10,7 @@ import Foundation
 enum ErrorState {
     case none
     case messageError(MessageError)
-    
+
     struct MessageError {
         let errorCode: Int?
         let iconRes: Int?
@@ -18,7 +18,7 @@ enum ErrorState {
         let message: String
         let primaryButton: String
         let secondaryButton: String?
-        
+
         static let common = MessageError(
             errorCode: nil,
             iconRes: nil,
@@ -27,7 +27,7 @@ enum ErrorState {
             primaryButton: R.string.localizable.common_close(),
             secondaryButton: nil
         )
-        
+
         static func network(
             errorCode: Int? = nil,
             iconRes: Int? = nil,
@@ -45,7 +45,7 @@ enum ErrorState {
                 secondaryButton: secondaryButton
             )
         }
-        
+
         static func api(
             errorCode: Int? = nil,
             iconRes: Int? = nil,
@@ -64,7 +64,7 @@ enum ErrorState {
                 secondaryButton: secondaryButton
             )
         }
-        
+
         static func server(
             errorCode: Int? = nil,
             iconRes: Int? = nil,

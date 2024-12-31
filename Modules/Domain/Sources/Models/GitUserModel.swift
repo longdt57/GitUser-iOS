@@ -13,7 +13,7 @@ public struct GitUserModel: Identifiable, Equatable {
     public let login: String
     public let avatarUrl: String?
     public let htmlUrl: String?
-    
+
     public init(id: Int64, login: String, avatarUrl: String?, htmlUrl: String?) {
         self.id = id
         self.login = login
@@ -21,4 +21,3 @@ public struct GitUserModel: Identifiable, Equatable {
         self.htmlUrl = htmlUrl
     }
 }
-

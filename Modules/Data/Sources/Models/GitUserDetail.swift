@@ -4,12 +4,12 @@
 //  Created by Long Do on 30/12/2024.
 //
 
+import Domain
 import Foundation
 import RealmSwift
-import Domain
 
 public class GitUserDetail: Object, Codable {
-    
+
     @Persisted(primaryKey: true) var id: Int64
     @Persisted var login: String
     @Persisted var name: String?
@@ -18,7 +18,7 @@ public class GitUserDetail: Object, Codable {
     @Persisted var location: String?
     @Persisted var followers: Int?
     @Persisted var following: Int?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case login
@@ -34,14 +34,14 @@ public class GitUserDetail: Object, Codable {
 extension GitUserDetail {
     func mapToDomain() -> GitUserDetailModel {
         return GitUserDetailModel(
-            id: self.id,
-            login: self.login,
-            name: self.name,
-            avatarUrl: self.avatarUrl,
-            blog: self.blog,
-            location: self.location,
-            followers: self.followers ?? 0,  // Default to 0 if nil
-            following: self.following ?? 0   // Default to 0 if nil
+            id: id,
+            login: login,
+            name: name,
+            avatarUrl: avatarUrl,
+            blog: blog,
+            location: location,
+            followers: followers ?? 0, // Default to 0 if nil
+            following: following ?? 0 // Default to 0 if nil
         )
     }
 }

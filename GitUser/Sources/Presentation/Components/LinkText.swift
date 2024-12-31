@@ -28,4 +28,3 @@ struct LinkText_Previews: PreviewProvider {
             .padding()
     }
 }
-

@@ -13,7 +13,7 @@ protocol GitUserDetailUiMapper {
 }
 
 class GitUserDetailUiMapperImpl: GitUserDetailUiMapper {
-    
+
     func mapToUiModel(oldUiModel: GitUserDetailUiModel, model: GitUserDetailModel) -> GitUserDetailUiModel {
         return oldUiModel.copy(
             name: model.name ?? model.login,

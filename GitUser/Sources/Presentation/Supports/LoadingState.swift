@@ -16,10 +16,10 @@ extension LoadingState {
     // Computed property to get the message from the LoadingState
     var message: String? {
         switch self {
-            case .none:
-                return nil
-            case .loading(let message):
-                return message
+        case .none:
+            return nil
+        case let .loading(message):
+            return message
         }
     }
 }

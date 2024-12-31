@@ -36,15 +36,15 @@ extension RequestConfiguration {
     var headers: HTTPHeaders? { nil }
 
     var interceptor: RequestInterceptor? { nil }
-    
+
     var encoding: ParameterEncoding {
         switch method {
-            case .post:
-                return JSONEncoding.default
-            case .get:
-                return URLEncoding.default
-            default:
-                return JSONEncoding.default
+        case .post:
+            return JSONEncoding.default
+        case .get:
+            return URLEncoding.default
+        default:
+            return JSONEncoding.default
         }
     }
 }

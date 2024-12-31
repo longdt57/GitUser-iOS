@@ -11,4 +11,3 @@ protocol DispatchQueueProvider {
     var backgroundQueue: DispatchQueue { get }
     var mainQueue: DispatchQueue { get }
 }
-

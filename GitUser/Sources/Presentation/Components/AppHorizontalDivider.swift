@@ -10,7 +10,7 @@ import SwiftUI
 struct AppHorizontalDivider: View {
     var thickness: CGFloat = 1
     var color: Color = Color.gray.opacity(0.2)
-    
+
     var body: some View {
         Divider()
             .frame(height: thickness)

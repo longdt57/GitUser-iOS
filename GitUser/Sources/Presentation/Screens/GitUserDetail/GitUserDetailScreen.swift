@@ -5,21 +5,21 @@
 //  Created by Long Do on 31/12/2024.
 //
 
-import SwiftUI
 import Resolver
+import SwiftUI
 
 struct GitUserDetailScreen: View {
-    
+
     var login: String
-    
+
     @StateObject var viewModel: GitUserDetailViewModel = Resolver.resolve()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode> // Access to presentation mode
-    
+
     var body: some View {
         VStack {
             content(uiModel: viewModel.uiModel)
         }
-        .showLoading(loadingState:  $viewModel.loading)
+        .showLoading(loadingState: $viewModel.loading)
         .showError(error: $viewModel.error, primaryAction: {
             viewModel.onErrorPrimaryAction()
         }, secondaryAction: {
@@ -38,7 +38,7 @@ struct GitUserDetailScreen: View {
                 .foregroundColor(.blue)
         })
     }
-    
+
     private func content(uiModel: GitUserDetailUiModel) -> some View {
         return ScrollView {
             VStack(alignment: .leading) {
@@ -50,7 +50,7 @@ struct GitUserDetailScreen: View {
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 16)
                 .padding(.top, 16)
-                
+
                 GitUserDetailFollows(
                     followers: uiModel.followers,
                     following: uiModel.following
@@ -58,13 +58,13 @@ struct GitUserDetailScreen: View {
                 .frame(maxWidth: .infinity)
                 .padding(.top, 24)
                 .padding(.horizontal, 80)
-                
+
                 GitUserDetailBlog(blog: uiModel.blog)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 16)
                     .padding(.horizontal, 16)
             }
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/ .infinity/*@END_MENU_TOKEN@*/)
         }
     }
 }

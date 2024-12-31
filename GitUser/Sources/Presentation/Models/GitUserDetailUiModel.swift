@@ -15,7 +15,7 @@ struct GitUserDetailUiModel {
     var location: String
     var followers: String
     var following: String
-    
+
     // Initializer with default values
     init(
         login: String = "",
@@ -34,7 +34,7 @@ struct GitUserDetailUiModel {
         self.followers = followers
         self.following = following
     }
-    
+
     func copy(
         login: String? = nil,
         name: String? = nil,
@@ -55,4 +55,3 @@ struct GitUserDetailUiModel {
         )
     }
 }
-

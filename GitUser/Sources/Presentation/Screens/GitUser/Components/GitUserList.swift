@@ -5,23 +5,23 @@
 //  Created by Long Do on 31/12/2024.
 //
 
-import SwiftUI
 import Domain
+import SwiftUI
 
 struct GitUserList: View {
     var users: [GitUserModel]
     var onClick: (GitUserModel) -> Void
     var onLoadMore: () -> Void
-    
+
     @State private var isNearBottom: Bool = false
-    
+
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 10) {  // Use LazyVStack instead of VStack
+            LazyVStack(spacing: 10) { // Use LazyVStack instead of VStack
                 ForEach(users) { user in
                     NavigationLink(destination: {
                         GitUserDetailScreen(login: user.login)
-                    },label: {
+                    }, label: {
                         GitUserListCard(user: user, onClick: onClick)
                             .onAppear {
                                 if user == users.last {
@@ -43,7 +43,12 @@ struct GitUserList_Previews: PreviewProvider {
     static var previews: some View {
         GitUserList(
             users: [
-                GitUserModel(id: 1, login: "longdt57", avatarUrl: "https://avatars.githubusercontent.com/u/1?v=4", htmlUrl: "https://github.com/longdt57")
+                GitUserModel(
+                    id: 1,
+                    login: "longdt57",
+                    avatarUrl: "https://avatars.githubusercontent.com/u/1?v=4",
+                    htmlUrl: "https://github.com/longdt57"
+                )
             ],
             onClick: { _ in },
             onLoadMore: { print("Load more") }
@@ -52,4 +57,3 @@ struct GitUserList_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
-
