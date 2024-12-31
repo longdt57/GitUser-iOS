@@ -36,7 +36,7 @@ enum Constant {
         }
 
         return [
-            "key_id" : Secret.appStoreKeyIdKey,
+            "key_id": Secret.appStoreKeyIdKey,
             "issuer_id": Secret.appStoreIssuerIdKey,
             "key": key,
             "in_house": false

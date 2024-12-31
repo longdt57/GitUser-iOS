@@ -1,6 +1,6 @@
 //  swiftlint:disable:this file_name
 //
-//  UIColor+Application.swift
+//  Color+Application.swift
 //
 
 import UIKit

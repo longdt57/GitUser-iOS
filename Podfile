@@ -17,6 +17,12 @@ target 'GitUser' do
   # Backend
   pod 'Alamofire'
   pod 'JSONAPIMapper', :git => 'https://github.com/nimblehq/JSONMapper', :tag => '1.1.1'
+  
+  # DI
+  pod 'Resolver'
+  
+  # Toast
+  pod 'AlertToast'
 
   # Storage
   pod 'KeychainAccess'
@@ -49,6 +55,8 @@ end
 def data_dependencies
   pod 'Alamofire'
   pod 'JSONAPIMapper', :git => 'https://github.com/nimblehq/JSONMapper', :tag => '1.1.1'
+  pod 'Resolver'
+  pod 'RealmSwift'
 end
 
 target 'Data' do
@@ -61,6 +69,8 @@ target 'Data' do
 end
 
 target 'Domain' do
+  pod 'Resolver'
+  
   target 'DomainTests' do
     testing_pods
   end

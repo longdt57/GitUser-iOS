@@ -4,7 +4,7 @@
 
 import Alamofire
 
-protocol NetworkAPIProtocol {
+public protocol NetworkAPIProtocol {
 
     func performRequest<T: Decodable>(
         _ configuration: RequestConfiguration,

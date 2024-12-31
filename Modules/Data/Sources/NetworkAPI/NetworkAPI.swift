@@ -4,15 +4,15 @@
 
 import Alamofire
 
-final class NetworkAPI: NetworkAPIProtocol {
+public class NetworkAPI: NetworkAPIProtocol {
 
     private let decoder: JSONDecoder
 
-    init(decoder: JSONDecoder = JSONDecoder()) {
+    public init(decoder: JSONDecoder = JSONDecoder()) {
         self.decoder = decoder
     }
 
-    func performRequest<T: Decodable>(
+    public func performRequest<T: Decodable>(
         _ configuration: RequestConfiguration,
         for type: T.Type
     ) async throws -> T {

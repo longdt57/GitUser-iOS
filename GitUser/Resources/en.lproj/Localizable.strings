@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  app
+  
+*/
+
+"popup_error_unknown_title" = "Sorry, something went wrong!";
+"popup_error_unknown_body" = "There was a problem processing your request. Please try again.";
+"popup_error_no_connection_title" = "You are currently offline!";
+"popup_error_no_connection_body" = "Looks like your connection is interrupted. Check network connection and try again.";
+"popup_error_timeout_title" = "Oops…Our server overloaded!";
+"popup_error_timeout_body" = "Apologies for the inconvenience! We’ll be back soon. Please try again later.";
+
+"loading" = "Loading...";
+"common_close" = "Close";
+"common_ok" = "OK";
+"common_retry" = "Retry";
+
+"not_set" = "Not set";
+"blog" = "Blog";
+"followers" = "Followers";
+"following" = "Followers";
+
+"git_user_list_screen_title" = "Github Users";
+"git_user_detail_screen_title" = "User Details";
