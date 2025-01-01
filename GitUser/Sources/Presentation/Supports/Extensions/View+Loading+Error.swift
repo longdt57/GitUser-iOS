@@ -12,7 +12,9 @@ extension View {
 
     func showLoading(loadingState: Binding<LoadingState>) -> some View {
         let isPresenting = Binding(
-            get: { if case .loading = loadingState.wrappedValue { return true } else { return false }},
+            get: {
+                if case .loading = loadingState.wrappedValue { return true } else { return false }
+            },
             set: { isLoading in
                 loadingState.wrappedValue = isLoading ? .loading() : .none
             }
@@ -31,7 +33,9 @@ extension View {
         secondaryAction: (() -> Void)? = {}
     ) -> some View {
         let isPresenting = Binding(
-            get: { if case .messageError = error.wrappedValue { return true } else { return false }},
+            get: {
+                if case .messageError = error.wrappedValue { return true } else { return false }
+            },
             set: { isErrorPresent in
                 if !isErrorPresent {
                     error.wrappedValue = .none

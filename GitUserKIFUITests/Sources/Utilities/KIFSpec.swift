@@ -2,9 +2,10 @@
 //  KIFSpec.swift
 //
 
-import Quick
+import KIF
+import XCTest
 
-class KIFSpec: QuickSpec {
+class KIFSpec: KIFTestCase {
 
     static let kifDelegate = XCTestCase()
 }

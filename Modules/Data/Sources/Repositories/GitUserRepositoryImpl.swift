@@ -25,7 +25,7 @@ public class GitUserRepositoryImpl: GitUserRepository {
     }
 
     public func getLocal(since: Int, perPage: Int) async throws -> [GitUserModel] {
-        let users = try await gitUserLocalSource.getUsers(since: since, perPage: perPage)
+        let users = try gitUserLocalSource.getUsers(since: since, perPage: perPage)
         return mapToDomain(users)
     }
 

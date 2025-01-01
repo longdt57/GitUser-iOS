@@ -1,6 +1,6 @@
 //
 //  UserAvatar.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -11,47 +11,19 @@ struct UserAvatar: View {
 
     var avatarUrl: String?
 
-    init(avatarUrl: String?) {
-        self.avatarUrl = avatarUrl
-    }
-
     var body: some View {
-        ZStack {
-            // AsyncImage for loading the avatar
-            AsyncImage(
-                url: URL(string: avatarUrl ?? ""),
-                content: { phase in
-                    switch phase {
-                    case .empty:
-                        // Placeholder state
-                        Image("ImageAvatarPlaceHolder")
-                            .resizable()
-                            .scaledToFill()
-                            .clipShape(Circle())
-                            .padding(4)
-                    case let .success(image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .clipShape(Circle())
-                            .padding(4)
-                    case .failure:
-                        // Error state
-                        Image("ImageAvatarPlaceHolder")
-                            .resizable()
-                            .scaledToFill()
-                            .clipShape(Circle())
-                            .padding(4)
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-            )
-            .clipShape(Circle()) // Circle shape for the avatar
-            .padding(4) // Padding inside the circle
+        AsyncImage(url: URL(string: avatarUrl.orEmpty())) { phase in
+            switch phase {
+                case let .success(image):
+                    image.resizable()
+                default:
+                    Image("ImageAvatarPlaceHolder").resizable()
+            }
         }
+        .scaledToFill()
+        .clipShape(Circle())
+        .padding(4)
         .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.2)))
-        .clipShape(RoundedRectangle(cornerRadius: 8)) // Ensure the background is clipped
     }
 }
 

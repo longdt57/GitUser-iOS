@@ -1,19 +1,18 @@
 //
-//  BoolExtension.swift
-// iOS MVVM
+//  Bool+Extensions.swift
+//  Git Users
 //
 //  Created by Do, LongThanh | MDSD on 2024/11/25.
 //
 
 extension Optional where Wrapped == Bool {
-
     public var orFalse: Bool {
-        return self ?? false
+        self ?? false
     }
 }
 
 extension Bool {
     public func not() -> Bool {
-        return !self
+        !self
     }
 }

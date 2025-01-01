@@ -1,6 +1,6 @@
 //
 //  GitUserDetailRepository.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 30/12/2024.
 //

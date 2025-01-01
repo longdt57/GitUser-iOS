@@ -1,6 +1,6 @@
 //
 //  GitUserDetailUiMapper.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -15,7 +15,7 @@ protocol GitUserDetailUiMapper {
 class GitUserDetailUiMapperImpl: GitUserDetailUiMapper {
 
     func mapToUiModel(oldUiModel: GitUserDetailUiModel, model: GitUserDetailModel) -> GitUserDetailUiModel {
-        return oldUiModel.copy(
+        oldUiModel.copy(
             name: model.name ?? model.login,
             avatarUrl: model.avatarUrl.orEmpty(),
             blog: model.blog.orEmpty(),

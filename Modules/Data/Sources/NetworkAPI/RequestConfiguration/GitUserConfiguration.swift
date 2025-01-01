@@ -47,7 +47,10 @@ extension GitUserConfiguration: RequestConfiguration {
     }
 
     var headers: HTTPHeaders? {
-        // Add custom headers if necessary
         return ["Content-Type": "application/json"]
+    }
+
+    var encoding: ParameterEncoding {
+        return URLEncoding.default
     }
 }

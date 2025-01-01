@@ -1,6 +1,6 @@
 //
 //  GitUserListScreen.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -25,11 +25,14 @@ struct GitUserListScreen: View {
                 }
             }
             .showLoading(loadingState: $viewModel.loading)
-            .showError(error: $viewModel.error, primaryAction: {
-                viewModel.onErrorPrimaryAction()
-            }, secondaryAction: {
-                viewModel.onErrorSecondaryAction()
-            })
+            .showError(
+                error: $viewModel.error,
+                primaryAction: {
+                    viewModel.onErrorPrimaryAction()
+                }, secondaryAction: {
+                    viewModel.onErrorSecondaryAction()
+                }
+            )
             .onAppear {
                 viewModel.handleAction(action: .loadIfEmpty)
             }
