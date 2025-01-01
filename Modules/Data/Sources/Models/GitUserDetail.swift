@@ -18,8 +18,17 @@ public class GitUserDetail: Object, Codable {
     @Persisted var location: String?
     @Persisted var followers: Int?
     @Persisted var following: Int?
-    
-    public convenience init(id: Int64, login: String, name: String? = nil, avatarUrl: String? = nil, blog: String? = nil, location: String? = nil, followers: Int? = nil, following: Int? = nil) {
+
+    public convenience init(
+        id: Int64,
+        login: String,
+        name: String? = nil,
+        avatarUrl: String? = nil,
+        blog: String? = nil,
+        location: String? = nil,
+        followers: Int? = nil,
+        following: Int? = nil
+    ) {
         self.init()
         self.id = id
         self.login = login

@@ -64,5 +64,6 @@ open class BaseViewModel: ObservableObject {
         for cancellable in cancellables {
             cancellable.cancel()
         }
+        cancellables.removeAll()
     }
 }

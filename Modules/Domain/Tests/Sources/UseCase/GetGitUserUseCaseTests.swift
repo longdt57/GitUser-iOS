@@ -14,7 +14,7 @@ class GetGitUserUseCaseTests: XCTestCase {
     private var useCase: GetGitUserUseCase!
     private var mockRepository: MockGitUserRepository!
     private var cancellables: Set<AnyCancellable>!
-    
+
     private let expectedUsers = [
         GitUserModel(id: 1, login: "User1", avatarUrl: nil, htmlUrl: nil),
         GitUserModel(id: 2, login: "User2", avatarUrl: nil, htmlUrl: nil)
@@ -102,30 +102,24 @@ class GetGitUserUseCaseTests: XCTestCase {
 
         wait(for: [expectation], timeout: 1.0)
     }
-    
-    class MockGitUserRepository: GitUserRepository {
-        var localUsers: [GitUserModel] = []
-        var remoteUsers: [GitUserModel] = []
-        var shouldThrowError: Bool = false
-        
-        func getRemote(since: Int, perPage: Int) async throws -> [GitUserModel] {
-            if shouldThrowError {
-                throw MockError.testError
-            }
-            return remoteUsers
+}
+
+class MockGitUserRepository: GitUserRepository {
+    var localUsers: [GitUserModel] = []
+    var remoteUsers: [GitUserModel] = []
+    var shouldThrowError: Bool = false
+
+    func getRemote(since: Int, perPage: Int) async throws -> [GitUserModel] {
+        if shouldThrowError {
+            throw MockError.testError
         }
-        
-        func getLocal(since: Int, perPage: Int) async throws -> [GitUserModel] {
-            if shouldThrowError {
-                throw MockError.testError
-            }
-            return localUsers
-        }
-        
+        return remoteUsers
     }
 
-    
-    enum MockError: Error {
-        case testError
+    func getLocal(since: Int, perPage: Int) async throws -> [GitUserModel] {
+        if shouldThrowError {
+            throw MockError.testError
+        }
+        return localUsers
     }
 }

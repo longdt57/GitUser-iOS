@@ -25,7 +25,11 @@ public class GetGitUserDetailLocalUseCase {
                     if let user = try await self.repository.getLocal(userName: userName) {
                         promise(.success(user))
                     } else {
-                        promise(.failure(NSError(domain: "User Detail Local", code: 404, userInfo: [NSLocalizedDescriptionKey: "User not found."])))
+                        promise(.failure(NSError(
+                            domain: "User Detail Local",
+                            code: 404,
+                            userInfo: [NSLocalizedDescriptionKey: "User not found."]
+                        )))
                     }
                 } catch {
                     promise(.failure(error))

@@ -51,15 +51,10 @@ class GitUserListViewModel: BaseViewModel {
                     case let .failure(error):
                         self?.handleError(error: error)
                     }
-                    // Hide loading once the operation completes
-                    self?.dispatchQueueProvider.mainQueue.async {
-                        self?.hideLoading()
-                    }
+                    self?.hideLoading()
                 },
                 receiveValue: { [weak self] result in
-                    self?.dispatchQueueProvider.mainQueue.async {
-                        self?.handleSuccess(result)
-                    }
+                    self?.handleSuccess(result)
                 }
             )
             .store(in: &cancellables)

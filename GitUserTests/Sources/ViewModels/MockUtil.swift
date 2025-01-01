@@ -1,9 +1,8 @@
 //
 //  MockUtil.swift
-//  DataTests
+//  GitUserTests
 //
-//  Created by Long Do on 01/01/2025.
-//  Copyright © 2025 Nimble. All rights reserved.
+//  Created by Long Do on 02/01/2025.
 //
 
 @testable import Domain

@@ -40,7 +40,7 @@ class GitUserDetailViewModel: BaseViewModel {
         getLocalUseCase.invoke(userName: getLogin())
             .receive(on: dispatchQueueProvider.backgroundQueue)
             .sink(
-                receiveCompletion: { [weak self] completion in
+                receiveCompletion: { [weak self] _ in
                     self?.hideLoading()
                 },
                 receiveValue: { [weak self] result in

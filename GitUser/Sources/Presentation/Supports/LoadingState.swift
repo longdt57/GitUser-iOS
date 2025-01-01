@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LoadingState {
+enum LoadingState: Equatable {
     case none
     case loading(message: String = R.string.localizable.loading())
 }

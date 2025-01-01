@@ -15,21 +15,12 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
     private var repositoryMock: MockGitUserDetailRepository!
     private var cancellables: Set<AnyCancellable>!
 
-    private let login = "longdt57"
-    private let expectedUser = GitUserDetailModel(
-        id: 8_809_113,
-        login: "longdt57",
-        name: "Logan",
-        avatarUrl: "https://avatars.githubusercontent.com/u/8809113?v=4",
-        blog: "https://www.linkedin.com/in/longdt57/",
-        location: "Hanoi",
-        followers: 10,
-        following: 5
-    )
+    private let login = MockUtil.login
+    private let userDetail = MockUtil.userDetail
 
     override func setUp() {
         super.setUp()
-        repositoryMock = MockGitUserDetailRepository()
+        repositoryMock = MockGitUserDetailRepository(remoteUser: userDetail)
         useCase = GetGitUserDetailRemoteUseCase(repository: repositoryMock)
         cancellables = []
     }
@@ -42,8 +33,8 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
     }
 
     func testInvoke_Success() {
-        let expectedUser = self.expectedUser
-        repositoryMock.remoteUserResult = .success(expectedUser)
+        let expectedUser = userDetail
+        repositoryMock.remoteUser = expectedUser
 
         let expectation = XCTestExpectation(description: "Successfully fetch user details")
 
@@ -66,8 +57,7 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
 
     func testInvoke_Failure() {
         // Arrange
-        let expectedError = MockError.testError
-        repositoryMock.remoteUserResult = .failure(expectedError)
+        repositoryMock.shouldThrowError = true
 
         let expectation = XCTestExpectation(description: "Failure fetching user details")
 
@@ -76,7 +66,7 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
             .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
                     // Assert
-                    XCTAssertEqual(error as! GetGitUserDetailRemoteUseCaseTests.MockError, expectedError)
+                    XCTAssertEqual(error as! MockError, MockError.testError)
                     expectation.fulfill()
                 } else {
                     XCTFail("Expected failure but got success")
@@ -88,29 +78,24 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
 
         wait(for: [expectation], timeout: 2.0)
     }
-    
-    class MockGitUserDetailRepository: GitUserDetailRepository {
-        
-        var remoteUserResult: Result<GitUserDetailModel, Error> = .failure(MockError.testError)
-        var localUserResult: Result<GitUserDetailModel?, Error> = .failure(MockError.testError)
-        
-        func getRemote(userName: String) async throws -> GitUserDetailModel {
-            switch remoteUserResult {
-                case let .success(user): return user
-                case let .failure(error): throw error
-            }
-        }
-        
-        func getLocal(userName: String) async throws -> GitUserDetailModel? {
-            switch localUserResult {
-                case let .success(user): return user
-                case let .failure(error): throw error
-            }
-        }
-    }
-    
-    enum MockError: Error {
-        case testError
-    }
 
+    class MockGitUserDetailRepository: GitUserDetailRepository {
+        var shouldThrowError: Bool = false
+        var remoteUser: GitUserDetailModel
+
+        init(remoteUser: GitUserDetailModel) {
+            self.remoteUser = remoteUser
+        }
+
+        func getRemote(userName: String) async throws -> GitUserDetailModel {
+            if shouldThrowError {
+                throw MockError.testError
+            }
+            return remoteUser
+        }
+
+        func getLocal(userName: String) async throws -> GitUserDetailModel? {
+            throw MockError.testError
+        }
+    }
 }
