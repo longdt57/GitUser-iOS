@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum ErrorState {
+enum ErrorState: Equatable {
     case none
     case messageError(MessageError)
 
-    struct MessageError {
+    struct MessageError: Equatable {
         let errorCode: Int?
         let iconRes: Int?
         let title: String

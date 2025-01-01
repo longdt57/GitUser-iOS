@@ -7,11 +7,17 @@
 
 import RealmSwift
 
-public class GitUserLocalSource {
+public protocol GitUserLocalSource {
+
+    func getUsers(since: Int, perPage: Int) throws -> [GitUser]
+    func upsert(users: [GitUser])
+}
+
+public class GitUserLocalSourceImpl: GitUserLocalSource {
 
     public init() {}
 
-    func getUsers(since: Int, perPage: Int) throws -> [GitUser] {
+    public func getUsers(since: Int, perPage: Int) throws -> [GitUser] {
         let realm = try! Realm()
 
         // Fetch all results sorted by 'id'
@@ -33,7 +39,7 @@ public class GitUserLocalSource {
         return pagedResults
     }
 
-    func upsert(users: [GitUser]) {
+    public func upsert(users: [GitUser]) {
         do {
             let realm = try! Realm()
             try! realm.write {

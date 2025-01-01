@@ -8,11 +8,14 @@
 import Combine
 import Data
 import Foundation
-import Resolver
 
 open class BaseViewModel: ObservableObject {
 
-    @Injected var dispatchQueueProvider: DispatchQueueProvider
+    let dispatchQueueProvider: DispatchQueueProvider
+
+    init(dispatchQueueProvider: DispatchQueueProvider) {
+        self.dispatchQueueProvider = dispatchQueueProvider
+    }
 
     @Published var loading: LoadingState = .none
     @Published var error: ErrorState = .none
@@ -61,18 +64,6 @@ open class BaseViewModel: ObservableObject {
         for cancellable in cancellables {
             cancellable.cancel()
         }
-    }
-}
-
-extension BaseViewModel {
-
-    func handleCompletion(completion: Subscribers.Completion<Error>) {
-        switch completion {
-        case .finished:
-            break
-        case let .failure(error):
-            handleError(error: error)
-        }
-        hideLoading()
+        cancellables.removeAll()
     }
 }

@@ -15,13 +15,13 @@ extension Resolver: ResolverRegistering {
         defaultScope = .graph
 
         registerJson()
-        registerViewModel()
-        registerUseCases()
         registerNetwork()
         registerLocalSource()
         registerRepositories()
+        registerUseCases()
         registerDispatchQueueProvider()
         registerMappers()
+        registerViewModel()
     }
 
     private static func registerJson() {
@@ -35,24 +35,34 @@ extension Resolver: ResolverRegistering {
     }
 
     private static func registerLocalSource() {
-        register(GitUserLocalSource.self) { GitUserLocalSource() }
-        register(GitUserDetailLocalSource.self) { GitUserDetailLocalSource() }
+        register(GitUserLocalSource.self) { GitUserLocalSourceImpl() }
+        register(GitUserDetailLocalSource.self) { GitUserDetailLocalSourceImpl() }
     }
 
     private static func registerRepositories() {
-        register(GitUserRepository.self) { GitUserRepositoryImpl() }
-        register(GitUserDetailRepository.self) { GitUserDetailRepositoryImpl() }
+        register(GitUserRepository.self) { GitUserRepositoryImpl(networkAPI: resolve(), gitUserLocalSource: resolve()) }
+        register(GitUserDetailRepository.self) { GitUserDetailRepositoryImpl(
+            networkAPI: resolve(),
+            gitUserDetailLocalSource: resolve()
+        ) }
     }
 
     private static func registerUseCases() {
-        register(GetGitUserUseCase.self) { GetGitUserUseCase() }
-        register(GetGitUserDetailRemoteUseCase.self) { GetGitUserDetailRemoteUseCase() }
-        register(GetGitUserDetailLocalUseCase.self) { GetGitUserDetailLocalUseCase() }
+        register(GetGitUserUseCase.self) { GetGitUserUseCase(repository: resolve()) }
+        register(GetGitUserDetailRemoteUseCase.self) { GetGitUserDetailRemoteUseCase(repository: resolve()) }
+        register(GetGitUserDetailLocalUseCase.self) { GetGitUserDetailLocalUseCase(repository: resolve()) }
     }
 
     private static func registerViewModel() {
-        register(GitUserListViewModel.self) { GitUserListViewModel() }
-        register(GitUserDetailViewModel.self) { GitUserDetailViewModel() }
+        register(GitUserListViewModel.self) {
+            GitUserListViewModel(useCase: resolve(), dispatchQueueProvider: resolve())
+        }
+        register(GitUserDetailViewModel.self) { GitUserDetailViewModel(
+            dispatchQueueProvider: resolve(),
+            getRemoteUseCase: resolve(),
+            getLocalUseCase: resolve(),
+            gitUserDetailUiMapper: resolve()
+        ) }
     }
 
     private static func registerDispatchQueueProvider() {

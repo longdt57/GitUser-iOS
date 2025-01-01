@@ -8,11 +8,15 @@
 import Combine
 import Domain
 import Foundation
-import Resolver
 
 class GitUserListViewModel: BaseViewModel {
 
-    @Injected var useCase: GetGitUserUseCase
+    private let useCase: GetGitUserUseCase
+
+    init(useCase: GetGitUserUseCase, dispatchQueueProvider: DispatchQueueProvider) {
+        self.useCase = useCase
+        super.init(dispatchQueueProvider: dispatchQueueProvider)
+    }
 
     @Published private(set) var uiModel: GitUserListUiModel = .init()
 
@@ -47,15 +51,10 @@ class GitUserListViewModel: BaseViewModel {
                     case let .failure(error):
                         self?.handleError(error: error)
                     }
-                    // Hide loading once the operation completes
-                    self?.dispatchQueueProvider.mainQueue.async {
-                        self?.hideLoading()
-                    }
+                    self?.hideLoading()
                 },
                 receiveValue: { [weak self] result in
-                    self?.dispatchQueueProvider.mainQueue.async {
-                        self?.handleSuccess(result)
-                    }
+                    self?.handleSuccess(result)
                 }
             )
             .store(in: &cancellables)

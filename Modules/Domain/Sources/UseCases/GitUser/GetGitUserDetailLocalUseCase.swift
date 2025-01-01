@@ -7,13 +7,14 @@
 
 import Combine
 import Foundation
-import Resolver
 
 public class GetGitUserDetailLocalUseCase {
 
-    public init() {}
+    public init(repository: GitUserDetailRepository) {
+        self.repository = repository
+    }
 
-    @Injected var repository: GitUserDetailRepository
+    private let repository: GitUserDetailRepository
 
     // Convert to return an AnyPublisher
     public func invoke(userName: String) -> AnyPublisher<GitUserDetailModel, Error> {
@@ -23,6 +24,12 @@ public class GetGitUserDetailLocalUseCase {
                 do {
                     if let user = try await self.repository.getLocal(userName: userName) {
                         promise(.success(user))
+                    } else {
+                        promise(.failure(NSError(
+                            domain: "User Detail Local",
+                            code: 404,
+                            userInfo: [NSLocalizedDescriptionKey: "User not found."]
+                        )))
                     }
                 } catch {
                     promise(.failure(error))

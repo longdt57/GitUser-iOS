@@ -6,15 +6,16 @@
 //
 
 import Domain
-import RealmSwift
-import Resolver
 
 public class GitUserRepositoryImpl: GitUserRepository {
 
-    public init() {}
+    public init(networkAPI: NetworkAPIProtocol, gitUserLocalSource: GitUserLocalSource) {
+        self.networkAPI = networkAPI
+        self.gitUserLocalSource = gitUserLocalSource
+    }
 
-    @Injected var networkAPI: NetworkAPIProtocol
-    @Injected var gitUserLocalSource: GitUserLocalSource
+    private let networkAPI: NetworkAPIProtocol
+    private let gitUserLocalSource: GitUserLocalSource
 
     public func getRemote(since: Int, perPage: Int) async throws -> [GitUserModel] {
         let configuration = GitUserConfiguration.getUsers(since: since, perPage: perPage)
