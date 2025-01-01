@@ -35,8 +35,8 @@ extension Resolver: ResolverRegistering {
     }
 
     private static func registerLocalSource() {
-        register(GitUserLocalSource.self) { GitUserLocalSource() }
-        register(GitUserDetailLocalSource.self) { GitUserDetailLocalSource() }
+        register(GitUserLocalSource.self) { GitUserLocalSourceImpl() }
+        register(GitUserDetailLocalSource.self) { GitUserDetailLocalSourceImpl() }
     }
 
     private static func registerRepositories() {

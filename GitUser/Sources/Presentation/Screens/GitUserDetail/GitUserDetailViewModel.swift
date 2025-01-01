@@ -41,7 +41,7 @@ class GitUserDetailViewModel: BaseViewModel {
             .receive(on: dispatchQueueProvider.backgroundQueue)
             .sink(
                 receiveCompletion: { [weak self] completion in
-                    self?.handleCompletion(completion: completion)
+                    self?.hideLoading()
                 },
                 receiveValue: { [weak self] result in
                     self?.handleSuccess(result: result)
@@ -58,7 +58,10 @@ class GitUserDetailViewModel: BaseViewModel {
             .receive(on: dispatchQueueProvider.backgroundQueue)
             .sink(
                 receiveCompletion: { [weak self] completion in
-                    self?.handleCompletion(completion: completion)
+                    if case let .failure(error) = completion {
+                        self?.handleError(error: error)
+                    }
+                    self?.hideLoading()
                 },
                 receiveValue: { [weak self] result in
                     self?.handleSuccess(result: result)

@@ -7,7 +7,6 @@
 
 import Combine
 import Foundation
-import Resolver
 
 public class GetGitUserDetailLocalUseCase {
 
@@ -25,6 +24,8 @@ public class GetGitUserDetailLocalUseCase {
                 do {
                     if let user = try await self.repository.getLocal(userName: userName) {
                         promise(.success(user))
+                    } else {
+                        promise(.failure(NSError(domain: "User Detail Local", code: 404, userInfo: [NSLocalizedDescriptionKey: "User not found."])))
                     }
                 } catch {
                     promise(.failure(error))

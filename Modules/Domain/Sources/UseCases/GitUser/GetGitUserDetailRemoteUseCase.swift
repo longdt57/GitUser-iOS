@@ -7,7 +7,6 @@
 
 import Combine
 import Foundation
-import Resolver
 
 public class GetGitUserDetailRemoteUseCase {
 

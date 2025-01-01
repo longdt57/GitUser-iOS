@@ -8,7 +8,6 @@
 import Combine
 import Data
 import Foundation
-import Resolver
 
 open class BaseViewModel: ObservableObject {
 
@@ -65,18 +64,5 @@ open class BaseViewModel: ObservableObject {
         for cancellable in cancellables {
             cancellable.cancel()
         }
-    }
-}
-
-extension BaseViewModel {
-
-    func handleCompletion(completion: Subscribers.Completion<Error>) {
-        switch completion {
-        case .finished:
-            break
-        case let .failure(error):
-            handleError(error: error)
-        }
-        hideLoading()
     }
 }

@@ -7,19 +7,24 @@
 
 import RealmSwift
 
-public class GitUserDetailLocalSource {
+public protocol GitUserDetailLocalSource {
 
+    func getUserDetailByLogin(login: String) throws -> GitUserDetail?
+    func upsert(userDetail: GitUserDetail)
+}
+
+public class GitUserDetailLocalSourceImpl : GitUserDetailLocalSource {
     public init() {}
-
+    
     // Fetch the user detail by login
-    func getUserDetailByLogin(login: String) throws -> GitUserDetail? {
+    public func getUserDetailByLogin(login: String) throws -> GitUserDetail? {
         let realm = try! Realm()
         // Retrieve the GitUserDetail object where login matches
         return realm.objects(GitUserDetail.self).filter("login == %@", login).first
     }
-
+    
     // Save the user detail to the local database
-    func upsert(userDetail: GitUserDetail) {
+    public func upsert(userDetail: GitUserDetail) {
         do {
             let realm = try! Realm()
             // Write to the Realm database
@@ -27,9 +32,9 @@ public class GitUserDetailLocalSource {
                 realm.add(userDetail, update: .modified)
             }
         } catch {
-            #if DEBUG
-                print("\(error)")
-            #endif
+#if DEBUG
+            print("\(error)")
+#endif
         }
     }
 }

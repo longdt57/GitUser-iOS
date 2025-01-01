@@ -1,5 +1,5 @@
 //
-//  GetGitUserDetailRemoteUseCaseSpec.swift
+//  GetGitUserDetailRemoteUseCaseTests.swift
 //  DomainTests
 //
 //  Created by Long Do on 01/01/2025.
@@ -7,7 +7,6 @@
 
 import Combine
 @testable import Domain
-import Resolver
 import XCTest
 
 final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
@@ -89,24 +88,25 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
 
         wait(for: [expectation], timeout: 2.0)
     }
-}
-
-final class MockGitUserDetailRepository: GitUserDetailRepository {
-
-    var remoteUserResult: Result<GitUserDetailModel, Error> = .failure(NSError(domain: "", code: 0, userInfo: nil))
-    var localUserResult: Result<GitUserDetailModel?, Error> = .failure(NSError(domain: "", code: 0, userInfo: nil))
-
-    func getRemote(userName: String) async throws -> GitUserDetailModel {
-        switch remoteUserResult {
-        case let .success(user): return user
-        case let .failure(error): throw error
+    
+    class MockGitUserDetailRepository: GitUserDetailRepository {
+        
+        var remoteUserResult: Result<GitUserDetailModel, Error> = .failure(NSError(domain: "", code: 0, userInfo: nil))
+        var localUserResult: Result<GitUserDetailModel?, Error> = .failure(NSError(domain: "", code: 0, userInfo: nil))
+        
+        func getRemote(userName: String) async throws -> GitUserDetailModel {
+            switch remoteUserResult {
+                case let .success(user): return user
+                case let .failure(error): throw error
+            }
+        }
+        
+        func getLocal(userName: String) async throws -> GitUserDetailModel? {
+            switch localUserResult {
+                case let .success(user): return user
+                case let .failure(error): throw error
+            }
         }
     }
 
-    func getLocal(userName: String) async throws -> GitUserDetailModel? {
-        switch localUserResult {
-        case let .success(user): return user
-        case let .failure(error): throw error
-        }
-    }
 }
