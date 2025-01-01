@@ -6,7 +6,7 @@
 //
 
 import Combine
-import Data
+import Domain
 import Foundation
 
 open class BaseViewModel: ObservableObject {
@@ -38,10 +38,12 @@ open class BaseViewModel: ObservableObject {
 
     func handleError(error: Error) {
         switch error {
-        case NetworkAPIError.generic:
-            self.error = .messageError(ErrorState.MessageError.common)
-        case NetworkAPIError.dataNotFound:
+        case NetworkAPIError.noConnectivity:
             self.error = .messageError(ErrorState.MessageError.network())
+        case NetworkAPIError.serverError:
+            self.error = .messageError(ErrorState.MessageError.server())
+        case let NetworkAPIError.apiError(apiError, httpCode, httpMessage):
+            self.error = .messageError(ErrorState.MessageError.api(messageBody: apiError?.message))
         default:
             self.error = .messageError(ErrorState.MessageError.common)
         }
