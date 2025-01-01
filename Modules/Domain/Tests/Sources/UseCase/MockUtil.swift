@@ -3,7 +3,6 @@
 //  DataTests
 //
 //  Created by Long Do on 01/01/2025.
-//  Copyright © 2025 Nimble. All rights reserved.
 //
 
 @testable import Domain

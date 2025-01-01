@@ -56,7 +56,6 @@ PODS:
   - GoogleUtilities/UserDefaults (8.0.2):
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
-  - JSONAPIMapper (1.1.1)
   - KeychainAccess (4.2.2)
   - KIF (3.10.0):
     - KIF/Core (= 3.10.0)
@@ -69,8 +68,6 @@ PODS:
     - nanopb/encode (= 3.30910.0)
   - nanopb/decode (3.30910.0)
   - nanopb/encode (3.30910.0)
-  - Nimble (12.3.0)
-  - NimbleExtension (0.1.1)
   - OHHTTPStubs/Core (9.1.0)
   - OHHTTPStubs/Default (9.1.0):
     - OHHTTPStubs/Core
@@ -87,7 +84,6 @@ PODS:
   - PromisesObjC (2.4.0)
   - PromisesSwift (2.4.0):
     - PromisesObjC (= 2.4.0)
-  - Quick (7.6.2)
   - R.swift (7.8.0)
   - Realm (20.0.1):
     - Realm/Headers (= 20.0.1)
@@ -110,15 +106,11 @@ DEPENDENCIES:
   - ArkanaKeysInterfaces (from `./ArkanaKeys/ArkanaKeysInterfaces`)
   - Factory
   - Firebase/Crashlytics
-  - JSONAPIMapper (from `https://github.com/nimblehq/JSONMapper`, tag `1.1.1`)
   - KeychainAccess
   - KIF
   - KIF/IdentifierTests
   - Kingfisher
-  - Nimble (~> 12.0)
-  - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
   - OHHTTPStubs/Swift
-  - Quick (~> 7.0)
   - R.swift
   - RealmSwift
   - Resolver
@@ -147,11 +139,9 @@ SPEC REPOS:
     - KIF
     - Kingfisher
     - nanopb
-    - Nimble
     - OHHTTPStubs
     - PromisesObjC
     - PromisesSwift
-    - Quick
     - R.swift
     - Realm
     - RealmSwift
@@ -167,20 +157,6 @@ EXTERNAL SOURCES:
     :path: "./ArkanaKeys/ArkanaKeys"
   ArkanaKeysInterfaces:
     :path: "./ArkanaKeys/ArkanaKeysInterfaces"
-  JSONAPIMapper:
-    :git: https://github.com/nimblehq/JSONMapper
-    :tag: 1.1.1
-  NimbleExtension:
-    :branch: master
-    :git: https://github.com/nimblehq/NimbleExtension
-
-CHECKOUT OPTIONS:
-  JSONAPIMapper:
-    :git: https://github.com/nimblehq/JSONMapper
-    :tag: 1.1.1
-  NimbleExtension:
-    :commit: 6a7d7c2b79a68dcdeaacc0b746e23088e79cafd1
-    :git: https://github.com/nimblehq/NimbleExtension
 
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
@@ -198,17 +174,13 @@ SPEC CHECKSUMS:
   FirebaseSessions: 9529d14180868e29a8da164b3a729c036204918b
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
   GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
-  JSONAPIMapper: 0d832d3b7d74281b150622a004f84171ded28a04
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   KIF: e0d42181aac4f5de06aa986ccf514588ab4ffe2f
   Kingfisher: f2af9028b16baf9dc6c07c570072bc41cbf009ef
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
-  Nimble: f8a8219d16f176429b951e8f7e72df5c23ceddc0
-  NimbleExtension: f831e53f13cca775bea8cd51e58327eadb87ef05
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
-  Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
   R.swift: f573269ca45b2ab066c082e363dd4c2b297b0d71
   Realm: 9572204903ef28caeb3c03bb30c1147f354ee3e7
   RealmSwift: d230b44017a55a1ba97de6a944da1fe3bedb92b5
@@ -219,6 +191,6 @@ SPEC CHECKSUMS:
   Wormholy: ab1c8c2f02f58587a0941deb0088555ffbf039a1
   xcbeautify: 6e2f57af5c3a86d490376d5758030a8dcc201c1b
 
-PODFILE CHECKSUM: 03d5b5cccf98efd03badf9a197a7b98982dcddab
+PODFILE CHECKSUM: a90ea46701be794acae895bfc77fce62595e98bb
 
 COCOAPODS: 1.16.2

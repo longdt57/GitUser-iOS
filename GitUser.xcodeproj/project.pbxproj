@@ -23,12 +23,11 @@
 		53C54F1A35AF751B28AB9E0C /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAC64AEA4D6F34B5ADE39D2 /* RequestConfiguration.swift */; };
 		5B7920F9225A4A0E320D1121 /* NetworkAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4667E5204AAEA0BA799A2F /* NetworkAPIProtocol.swift */; };
 		6804D5FAED1DAEB025C8B2B5 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A126BC4E5304C8B6EC6CF1B /* KIF+Swift.swift */; };
-		6E6FABCBA5318B031832CC3E /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BEEF963AEE03938D0EDF2C /* OptionalUnwrapSpec.swift */; };
 		8A3DBFA7FFA2FE9E89EB7E8D /* KIFSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE196B127EDCC772AE46548B /* KIFSpec.swift */; };
 		8A60E33CC73B787E8E4D6D68 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF926E8D1A027DB6399D808 /* UIView+Subviews.swift */; };
 		9598B0AD5491831C9F67F9CC /* Pods_Domain_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D3D7F1781E6E7B22BA50B8 /* Pods_Domain_DomainTests.framework */; };
 		A18054F0539AEBFAFDE55255 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B405F3C5B6B72094D70AF021 /* Domain.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A248AAF1EFA844AFC7A55808 /* NetworkAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72479EAD1DB498E5351B8CA9 /* NetworkAPISpec.swift */; };
+		A248AAF1EFA844AFC7A55808 /* NetworkAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72479EAD1DB498E5351B8CA9 /* NetworkAPITests.swift */; };
 		A68A46312FA4670A49381CD2 /* Pods_GitUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B228C2B7B84913BE782B8B3D /* Pods_GitUser.framework */; };
 		BE110B673D20EB44ECEE6224 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79E00A55DCFCD71A642C436 /* Constants.swift */; };
 		BE147516B68ECA5C9F817C67 /* DummyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839B2B10A80AD0AE9D87D45 /* DummyNetworkModel.swift */; };
@@ -261,12 +260,11 @@
 		5C8F1FF4A4A18B1A34CD67CF /* Pods-GitUser-GitUserKIFUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitUser-GitUserKIFUITests.release staging.xcconfig"; path = "Target Support Files/Pods-GitUser-GitUserKIFUITests/Pods-GitUser-GitUserKIFUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		5CF926E8D1A027DB6399D808 /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		619F1D2B6D57677C283ADDBA /* Color+Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Application.swift"; sourceTree = "<group>"; };
-		65BEEF963AEE03938D0EDF2C /* OptionalUnwrapSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalUnwrapSpec.swift; sourceTree = "<group>"; };
 		65F5213583F8A89E0BB917AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6839B2B10A80AD0AE9D87D45 /* DummyNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNetworkModel.swift; sourceTree = "<group>"; };
 		684E4B8929C8BA671FCDA046 /* Pods-Data.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.debug staging.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.debug staging.xcconfig"; sourceTree = "<group>"; };
 		6B16E0F33F3E609A7293BEB2 /* Pods-GitUserTests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitUserTests.release production.xcconfig"; path = "Target Support Files/Pods-GitUserTests/Pods-GitUserTests.release production.xcconfig"; sourceTree = "<group>"; };
-		72479EAD1DB498E5351B8CA9 /* NetworkAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPISpec.swift; sourceTree = "<group>"; };
+		72479EAD1DB498E5351B8CA9 /* NetworkAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPITests.swift; sourceTree = "<group>"; };
 		7A63A82B9F0AB2520636FB89 /* Pods-GitUser.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitUser.debug production.xcconfig"; path = "Target Support Files/Pods-GitUser/Pods-GitUser.debug production.xcconfig"; sourceTree = "<group>"; };
 		7C090C1BAC3E81E8BAD2463E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F4667E5204AAEA0BA799A2F /* NetworkAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocol.swift; sourceTree = "<group>"; };
@@ -456,14 +454,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		0B21E5F2E6355D50F7FE9643 /* Supports */ = {
-			isa = PBXGroup;
-			children = (
-				BDE2BC3F1AED04568814CB10 /* Extensions */,
-			);
-			path = Supports;
-			sourceTree = "<group>";
-		};
 		0FEDE0AAD761CED8127B8D26 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,14 +500,6 @@
 				B570332DBA103B72A9C68D32 /* Tests */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		1A60EC5696479EDA7DC1B7DA /* Specs */ = {
-			isa = PBXGroup;
-			children = (
-				0B21E5F2E6355D50F7FE9643 /* Supports */,
-			);
-			path = Specs;
 			sourceTree = "<group>";
 		};
 		1BC456A93EE65DD96478EE7C /* Plists */ = {
@@ -714,7 +696,7 @@
 		6FA2DAA70DC31726BD1932B1 /* NetworkAPI */ = {
 			isa = PBXGroup;
 			children = (
-				72479EAD1DB498E5351B8CA9 /* NetworkAPISpec.swift */,
+				72479EAD1DB498E5351B8CA9 /* NetworkAPITests.swift */,
 			);
 			path = NetworkAPI;
 			sourceTree = "<group>";
@@ -765,7 +747,6 @@
 			isa = PBXGroup;
 			children = (
 				D18192B12D2595AB003103D1 /* Presentations */,
-				1A60EC5696479EDA7DC1B7DA /* Specs */,
 				D18192A12D258D11003103D1 /* AppXCTestCase.swift */,
 			);
 			path = Sources;
@@ -778,14 +759,6 @@
 				8DD48FC89F35FAF92AFF7618 /* DummyRequestConfiguration.swift */,
 			);
 			path = Dummies;
-			sourceTree = "<group>";
-		};
-		8821C633A576822DBC469863 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				65BEEF963AEE03938D0EDF2C /* OptionalUnwrapSpec.swift */,
-			);
-			path = Foundation;
 			sourceTree = "<group>";
 		};
 		891C55015CB06C97A3BF5199 /* Configurations */ = {
@@ -940,14 +913,6 @@
 				18F4B4CACE9DF9105D6D7B3E /* Domain */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		BDE2BC3F1AED04568814CB10 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8821C633A576822DBC469863 /* Foundation */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C2ED2D33E4A3F0524A702AD2 /* Models */ = {
@@ -1479,7 +1444,7 @@
 		C4B376D96105C7B836303669 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = Nimble;
+				ORGANIZATIONNAME = "Lee Group";
 				TargetAttributes = {
 					6E58E11A5C8EDD4BCBCA1D2E = {
 						TestTargetID = DCD50A311E7F332C1F6D90F3;
@@ -1960,7 +1925,6 @@
 				D181929C2D258129003103D1 /* GitUserListViewModelTests.swift in Sources */,
 				D18192B92D2596E8003103D1 /* FollowerFormatterTests.swift in Sources */,
 				D18192A42D258D72003103D1 /* GitUserDetailViewModelTests.swift in Sources */,
-				6E6FABCBA5318B031832CC3E /* OptionalUnwrapSpec.swift in Sources */,
 				D18192972D257E2B003103D1 /* BaseViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1973,7 +1937,7 @@
 				D181928C2D256E53003103D1 /* GitUserRepositoryImplTests.swift in Sources */,
 				BE147516B68ECA5C9F817C67 /* DummyNetworkModel.swift in Sources */,
 				F7627D238BF02375017366DA /* DummyRequestConfiguration.swift in Sources */,
-				A248AAF1EFA844AFC7A55808 /* NetworkAPISpec.swift in Sources */,
+				A248AAF1EFA844AFC7A55808 /* NetworkAPITests.swift in Sources */,
 				D181928E2D2574F6003103D1 /* GitUserDetailRepositoryImplTests.swift in Sources */,
 				03F434BC4410A39B7699CC04 /* NetworkStubber.swift in Sources */,
 			);

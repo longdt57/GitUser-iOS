@@ -97,6 +97,7 @@ final class GitUserDetailViewModelTests: AppXCTestCase {
         // Act: Fetch local data
         viewModel.handleAction(action: .setUserLogin(login: "user1"))
 
+        advanceUntilIdle()
         // Assert: Verify that the UI model is updated with local data
         XCTAssertEqual(viewModel.uiModel.name, userDetail.name, "The UI model name should match the local data")
         XCTAssertEqual(

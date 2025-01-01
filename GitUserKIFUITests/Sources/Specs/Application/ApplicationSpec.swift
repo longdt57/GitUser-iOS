@@ -2,30 +2,23 @@
 //  ApplicationSpec.swift
 //
 
-import Foundation
-import Nimble
-import Quick
+import KIF
+import XCTest
 
-final class ApplicationSpec: KIFSpec {
+final class ApplicationTests: KIFSpec {
 
-    override class func spec() {
+    override func setUp() {
+        super.setUp()
+        // Setup code: Navigate to the testing screen
+    }
 
-        describe("a GitUser screen") {
+    override func tearDown() {
+        // Teardown code: Navigate to neutral state
+        super.tearDown()
+    }
 
-            beforeEach {
-                // Navigate to the testing screen
-            }
-
-            afterEach {
-                // Navigate to neutral state
-            }
-
-            context("when opens") {
-
-                it("shows its UI components") {
-                    tester().waitForView(withAccessibilityLabel: "Hello, world!")
-                }
-            }
-        }
+    func testGitUserScreen_whenOpens_showsUIComponents() {
+        // Act: Wait for the view with the expected accessibility label
+        ApplicationTests.tester().waitForView(withAccessibilityLabel: "Github Users")
     }
 }

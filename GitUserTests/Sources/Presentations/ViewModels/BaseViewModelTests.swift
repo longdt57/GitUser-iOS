@@ -12,12 +12,6 @@ import XCTest
 
 class BaseViewModelTests: XCTestCase {
 
-    // Mocks
-    class MockDispatchQueueProvider: DispatchQueueProvider {
-        var backgroundQueue: DispatchQueue = .init(label: "background")
-        var mainQueue: DispatchQueue = .main
-    }
-
     // Test instance
     private var viewModel: BaseViewModel!
     private var mockDispatchQueueProvider: MockDispatchQueueProvider!

@@ -12,10 +12,10 @@ class AppXCTestCase: XCTestCase {
     func advanceUntilIdle() {
         let expectation = XCTestExpectation(description: "advanceUntilIdle")
         // Wait for the expectation to be fulfilled or timeout
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             // Fulfill the expectation when the async task is completed (simulating loading)
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 2)
+        wait(for: [expectation], timeout: 1)
     }
 }

@@ -3,8 +3,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 def testing_pods
-  pod 'Quick', '~> 7.0'
-  pod 'Nimble', '~> 12.0'
   pod 'Sourcery'
   pod 'SwiftFormat/CLI'
   pod 'OHHTTPStubs/Swift', :configurations => ['Debug Staging', 'Debug Production']
@@ -16,7 +14,6 @@ target 'GitUser' do
 
   # Backend
   pod 'Alamofire'
-  pod 'JSONAPIMapper', :git => 'https://github.com/nimblehq/JSONMapper', :tag => '1.1.1'
   
   # DI
   pod 'Resolver'
@@ -29,7 +26,6 @@ target 'GitUser' do
 
   # Tools
   pod 'Firebase/Crashlytics'
-  pod 'NimbleExtension', :git => 'https://github.com/nimblehq/NimbleExtension', :branch => 'master'
   pod 'R.swift'
   pod 'Factory'
 
@@ -54,7 +50,6 @@ end
 
 def data_dependencies
   pod 'Alamofire'
-  pod 'JSONAPIMapper', :git => 'https://github.com/nimblehq/JSONMapper', :tag => '1.1.1'
   pod 'RealmSwift'
 end
 
