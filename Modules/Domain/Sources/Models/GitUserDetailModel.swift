@@ -8,14 +8,14 @@
 import Foundation
 
 public struct GitUserDetailModel: Identifiable, Equatable {
-    public let id: Int64
-    public let login: String
-    public let name: String?
-    public let avatarUrl: String?
-    public let blog: String?
-    public let location: String?
-    public let followers: Int
-    public let following: Int
+    public var id: Int64
+    public var login: String
+    public var name: String?
+    public var avatarUrl: String?
+    public var blog: String?
+    public var location: String?
+    public var followers: Int
+    public var following: Int
 
     // Public initializer
     public init(
