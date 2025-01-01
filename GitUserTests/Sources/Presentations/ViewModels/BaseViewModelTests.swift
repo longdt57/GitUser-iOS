@@ -6,7 +6,7 @@
 //
 
 import Combine
-@testable import Data
+@testable import Domain
 @testable import GitUser
 import XCTest
 
@@ -69,7 +69,7 @@ class BaseViewModelTests: XCTestCase {
 
     func testHandleError_genericError() {
         // Arrange
-        let error = NetworkAPIError.generic
+        let error = MockError.testError
 
         // Act
         viewModel.handleError(error: error)
@@ -80,7 +80,7 @@ class BaseViewModelTests: XCTestCase {
 
     func testHandleError_dataNotFoundError() {
         // Arrange
-        let error = NetworkAPIError.dataNotFound
+        let error = NetworkAPIError.noConnectivity
 
         // Act
         viewModel.handleError(error: error)
@@ -102,7 +102,7 @@ class BaseViewModelTests: XCTestCase {
 
     func testHideError() {
         // Arrange
-        viewModel.handleError(error: NetworkAPIError.generic) // Set error state
+        viewModel.handleError(error: NetworkAPIError.serverError) // Set error state
 
         // Act
         viewModel.hideError()
@@ -113,7 +113,7 @@ class BaseViewModelTests: XCTestCase {
 
     func testOnErrorPrimaryAction() {
         // Arrange
-        viewModel.handleError(error: NetworkAPIError.generic) // Set error state
+        viewModel.handleError(error: NetworkAPIError.noConnectivity) // Set error state
 
         // Act
         viewModel.onErrorPrimaryAction()
@@ -124,7 +124,7 @@ class BaseViewModelTests: XCTestCase {
 
     func testOnErrorSecondaryAction() {
         // Arrange
-        viewModel.handleError(error: NetworkAPIError.generic) // Set error state
+        viewModel.handleError(error: NetworkAPIError.noConnectivity) // Set error state
 
         // Act
         viewModel.onErrorSecondaryAction()

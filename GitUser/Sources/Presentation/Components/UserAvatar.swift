@@ -14,10 +14,10 @@ struct UserAvatar: View {
     var body: some View {
         AsyncImage(url: URL(string: avatarUrl.orEmpty())) { phase in
             switch phase {
-                case let .success(image):
-                    image.resizable()
-                default:
-                    Image("ImageAvatarPlaceHolder").resizable()
+            case let .success(image):
+                image.resizable()
+            default:
+                Image("ImageAvatarPlaceHolder").resizable()
             }
         }
         .scaledToFill()
