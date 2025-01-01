@@ -6,7 +6,6 @@
 //
 
 import Domain
-import RealmSwift
 
 public class GitUserRepositoryImpl: GitUserRepository {
 

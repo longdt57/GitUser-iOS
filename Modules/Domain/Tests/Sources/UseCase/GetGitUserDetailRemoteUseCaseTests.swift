@@ -66,7 +66,7 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
 
     func testInvoke_Failure() {
         // Arrange
-        let expectedError = NSError(domain: "TestError", code: 1, userInfo: nil)
+        let expectedError = MockError.testError
         repositoryMock.remoteUserResult = .failure(expectedError)
 
         let expectation = XCTestExpectation(description: "Failure fetching user details")
@@ -76,7 +76,7 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
             .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
                     // Assert
-                    XCTAssertEqual(error.localizedDescription, expectedError.localizedDescription)
+                    XCTAssertEqual(error as! GetGitUserDetailRemoteUseCaseTests.MockError, expectedError)
                     expectation.fulfill()
                 } else {
                     XCTFail("Expected failure but got success")
@@ -91,8 +91,8 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
     
     class MockGitUserDetailRepository: GitUserDetailRepository {
         
-        var remoteUserResult: Result<GitUserDetailModel, Error> = .failure(NSError(domain: "", code: 0, userInfo: nil))
-        var localUserResult: Result<GitUserDetailModel?, Error> = .failure(NSError(domain: "", code: 0, userInfo: nil))
+        var remoteUserResult: Result<GitUserDetailModel, Error> = .failure(MockError.testError)
+        var localUserResult: Result<GitUserDetailModel?, Error> = .failure(MockError.testError)
         
         func getRemote(userName: String) async throws -> GitUserDetailModel {
             switch remoteUserResult {
@@ -107,6 +107,10 @@ final class GetGitUserDetailRemoteUseCaseTests: XCTestCase {
                 case let .failure(error): throw error
             }
         }
+    }
+    
+    enum MockError: Error {
+        case testError
     }
 
 }

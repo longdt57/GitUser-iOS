@@ -26,7 +26,6 @@ class GetGitUserDetailLocalUseCaseTests: XCTestCase {
         followers: 10,
         following: 5
     )
-    private let genericError = NSError(domain: "com.example.error", code: 1, userInfo: [NSLocalizedDescriptionKey: "An unexpected error occurred."])
     
     override func setUp() {
         super.setUp()
@@ -73,7 +72,7 @@ class GetGitUserDetailLocalUseCaseTests: XCTestCase {
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     // Assert
-                    XCTAssertEqual(error.localizedDescription, self.genericError.localizedDescription)
+                    XCTAssertEqual(error as! GetGitUserDetailLocalUseCaseTests.MockError, MockError.testError)
                     expectation.fulfill()
                 }
             }, receiveValue: { _ in
@@ -108,17 +107,20 @@ class GetGitUserDetailLocalUseCaseTests: XCTestCase {
     class MockGitUserDetailRepository: GitUserDetailRepository {
         var localUser: GitUserDetailModel?
         var shouldThrowError: Bool = false
-        private let genericError = NSError(domain: "com.example.error", code: 1, userInfo: [NSLocalizedDescriptionKey: "An unexpected error occurred."])
         
         func getRemote(userName: String) async throws -> GitUserDetailModel {
-            throw genericError
+            throw MockError.testError
         }
         
         func getLocal(userName: String) async throws -> GitUserDetailModel? {
             if shouldThrowError {
-                throw genericError
+                throw MockError.testError
             }
             return localUser
         }
+    }
+    
+    enum MockError: Error {
+        case testError
     }
 }

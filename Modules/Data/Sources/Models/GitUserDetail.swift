@@ -18,6 +18,18 @@ public class GitUserDetail: Object, Codable {
     @Persisted var location: String?
     @Persisted var followers: Int?
     @Persisted var following: Int?
+    
+    public convenience init(id: Int64, login: String, name: String? = nil, avatarUrl: String? = nil, blog: String? = nil, location: String? = nil, followers: Int? = nil, following: Int? = nil) {
+        self.init()
+        self.id = id
+        self.login = login
+        self.name = name
+        self.avatarUrl = avatarUrl
+        self.blog = blog
+        self.location = location
+        self.followers = followers
+        self.following = following
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
