@@ -1,6 +1,6 @@
 //
 //  Resolver+Injection.swift
-// iOS MVVM
+// Git Users
 //
 //  Created by Do, LongThanh | MDSD on 2024/11/25.
 //
@@ -25,9 +25,7 @@ extension Resolver: ResolverRegistering {
     }
 
     private static func registerJson() {
-        register(JSONDecoder.self) {
-            JSONDecoder()
-        }.scope(.application)
+        register(JSONDecoder.self) { JSONDecoder() }.scope(.application)
     }
 
     private static func registerNetwork() {
@@ -41,10 +39,12 @@ extension Resolver: ResolverRegistering {
 
     private static func registerRepositories() {
         register(GitUserRepository.self) { GitUserRepositoryImpl(networkAPI: resolve(), gitUserLocalSource: resolve()) }
-        register(GitUserDetailRepository.self) { GitUserDetailRepositoryImpl(
-            networkAPI: resolve(),
-            gitUserDetailLocalSource: resolve()
-        ) }
+        register(GitUserDetailRepository.self) {
+            GitUserDetailRepositoryImpl(
+                networkAPI: resolve(),
+                gitUserDetailLocalSource: resolve()
+            )
+        }
     }
 
     private static func registerUseCases() {
@@ -57,12 +57,14 @@ extension Resolver: ResolverRegistering {
         register(GitUserListViewModel.self) {
             GitUserListViewModel(useCase: resolve(), dispatchQueueProvider: resolve())
         }
-        register(GitUserDetailViewModel.self) { GitUserDetailViewModel(
-            dispatchQueueProvider: resolve(),
-            getRemoteUseCase: resolve(),
-            getLocalUseCase: resolve(),
-            gitUserDetailUiMapper: resolve()
-        ) }
+        register(GitUserDetailViewModel.self) {
+            GitUserDetailViewModel(
+                dispatchQueueProvider: resolve(),
+                getRemoteUseCase: resolve(),
+                getLocalUseCase: resolve(),
+                gitUserDetailUiMapper: resolve()
+            )
+        }
     }
 
     private static func registerDispatchQueueProvider() {

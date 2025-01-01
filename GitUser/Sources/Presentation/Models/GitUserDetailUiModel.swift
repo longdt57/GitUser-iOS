@@ -1,6 +1,6 @@
 //
 //  GitUserDetailUiModel.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -44,7 +44,7 @@ struct GitUserDetailUiModel {
         followers: String? = nil,
         following: String? = nil
     ) -> GitUserDetailUiModel {
-        return GitUserDetailUiModel(
+        GitUserDetailUiModel(
             login: login ?? self.login,
             name: name ?? self.name,
             avatarUrl: avatarUrl ?? self.avatarUrl,

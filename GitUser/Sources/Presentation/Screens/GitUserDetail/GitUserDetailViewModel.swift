@@ -1,6 +1,6 @@
 //
 //  GitUserDetailViewModel.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -55,7 +55,8 @@ class GitUserDetailViewModel: BaseViewModel {
             showLoading()
         }
         getRemoteUseCase.invoke(userName: getLogin())
-            .receive(on: dispatchQueueProvider.backgroundQueue)
+            .subscribe(on: dispatchQueueProvider.backgroundQueue)
+            .receive(on: dispatchQueueProvider.mainQueue)
             .sink(
                 receiveCompletion: { [weak self] completion in
                     if case let .failure(error) = completion {
@@ -91,10 +92,10 @@ class GitUserDetailViewModel: BaseViewModel {
     }
 
     private func isDataEmpty() -> Bool {
-        return uiModel.name.isEmpty
+        uiModel.name.isEmpty
     }
 
     private func getLogin() -> String {
-        return uiModel.login
+        uiModel.login
     }
 }

@@ -25,7 +25,7 @@ public class GitUserDetailRepositoryImpl: GitUserDetailRepository {
     }
 
     public func getLocal(userName: String) async throws -> GitUserDetailModel? {
-        return try await gitUserDetailLocalSource.getUserDetailByLogin(login: userName)?.mapToDomain()
+        return try gitUserDetailLocalSource.getUserDetailByLogin(login: userName)?.mapToDomain()
     }
 
     func saveToLocal(userDetail: GitUserDetail) {

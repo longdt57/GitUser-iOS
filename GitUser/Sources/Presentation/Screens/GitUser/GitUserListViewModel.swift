@@ -1,6 +1,6 @@
 //
 //  GitUserListViewModel.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -11,14 +11,14 @@ import Foundation
 
 class GitUserListViewModel: BaseViewModel {
 
+    @Published private(set) var uiModel: GitUserListUiModel = .init()
+
     private let useCase: GetGitUserUseCase
 
     init(useCase: GetGitUserUseCase, dispatchQueueProvider: DispatchQueueProvider) {
         self.useCase = useCase
         super.init(dispatchQueueProvider: dispatchQueueProvider)
     }
-
-    @Published private(set) var uiModel: GitUserListUiModel = .init()
 
     func handleAction(action: GitUserListAction) {
         switch action {
@@ -42,7 +42,8 @@ class GitUserListViewModel: BaseViewModel {
 
         // Call the useCase to fetch more users
         useCase.invoke(since: getSince(), perPage: GitUserListViewModel.PERPAGE)
-            .receive(on: dispatchQueueProvider.backgroundQueue)
+            .subscribe(on: dispatchQueueProvider.backgroundQueue)
+            .receive(on: dispatchQueueProvider.mainQueue)
             .sink(
                 receiveCompletion: { [weak self] completion in
                     switch completion {

@@ -1,6 +1,6 @@
 //
 //  GitUserDetailLocalSource.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -26,7 +26,7 @@ public class GitUserDetailLocalSourceImpl: GitUserDetailLocalSource {
     // Save the user detail to the local database
     public func upsert(userDetail: GitUserDetail) {
         do {
-            let realm = try! Realm()
+            let realm = try Realm()
             // Write to the Realm database
             try! realm.write {
                 realm.add(userDetail, update: .modified)

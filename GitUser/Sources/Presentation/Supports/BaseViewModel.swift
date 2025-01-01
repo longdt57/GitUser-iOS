@@ -11,8 +11,6 @@ import Foundation
 
 open class BaseViewModel: ObservableObject {
 
-    let dispatchQueueProvider: DispatchQueueProvider
-
     init(dispatchQueueProvider: DispatchQueueProvider) {
         self.dispatchQueueProvider = dispatchQueueProvider
     }
@@ -20,6 +18,7 @@ open class BaseViewModel: ObservableObject {
     @Published var loading: LoadingState = .none
     @Published var error: ErrorState = .none
 
+    let dispatchQueueProvider: DispatchQueueProvider
     var cancellables = Set<AnyCancellable>()
 
     func showLoading() {

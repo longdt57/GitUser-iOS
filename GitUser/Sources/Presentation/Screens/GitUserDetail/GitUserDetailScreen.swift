@@ -1,6 +1,6 @@
 //
 //  GitUserDetailScreen.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -13,6 +13,7 @@ struct GitUserDetailScreen: View {
     var login: String
 
     @StateObject var viewModel: GitUserDetailViewModel = Resolver.resolve()
+
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode> // Access to presentation mode
 
     var body: some View {
@@ -20,11 +21,14 @@ struct GitUserDetailScreen: View {
             content(uiModel: viewModel.uiModel)
         }
         .showLoading(loadingState: $viewModel.loading)
-        .showError(error: $viewModel.error, primaryAction: {
-            viewModel.onErrorPrimaryAction()
-        }, secondaryAction: {
-            viewModel.onErrorSecondaryAction()
-        })
+        .showError(
+            error: $viewModel.error,
+            primaryAction: {
+                viewModel.onErrorPrimaryAction()
+            }, secondaryAction: {
+                viewModel.onErrorSecondaryAction()
+            }
+        )
         .onAppear {
             viewModel.handleAction(action: .setUserLogin(login: login))
         }
@@ -40,7 +44,7 @@ struct GitUserDetailScreen: View {
     }
 
     private func content(uiModel: GitUserDetailUiModel) -> some View {
-        return ScrollView {
+        ScrollView {
             VStack(alignment: .leading) {
                 GitUserDetailCard(
                     name: uiModel.name,

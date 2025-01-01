@@ -1,6 +1,6 @@
 //
 //  UserCard.swift
-//  iOS MVVM
+//  Git Users
 //
 //  Created by Long Do on 31/12/2024.
 //
@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct UserCard<Content: View>: View {
-    let content: Content
 
     init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
+
+    let content: Content
 
     var body: some View {
         ZStack {
