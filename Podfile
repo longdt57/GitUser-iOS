@@ -33,8 +33,6 @@ target 'GitUser' do
   pod 'SwiftLint'
   pod 'Wormholy', :configurations => ['Debug Staging', 'Debug Production']
   pod 'xcbeautify'
-  pod "ArkanaKeys", path: "./ArkanaKeys/ArkanaKeys"
-  pod "ArkanaKeysInterfaces", path: "./ArkanaKeys/ArkanaKeysInterfaces"
 
   target 'GitUserTests' do
     inherit! :search_paths

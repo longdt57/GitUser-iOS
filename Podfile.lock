@@ -1,9 +1,6 @@
 PODS:
   - Alamofire (5.10.2)
   - AlertToast (1.3.9)
-  - ArkanaKeys (1.0.0):
-    - ArkanaKeysInterfaces (~> 1.0.0)
-  - ArkanaKeysInterfaces (1.0.0)
   - Factory (2.4.3)
   - Firebase/CoreOnly (11.6.0):
     - FirebaseCore (~> 11.6.0)
@@ -102,8 +99,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlertToast
-  - ArkanaKeys (from `./ArkanaKeys/ArkanaKeys`)
-  - ArkanaKeysInterfaces (from `./ArkanaKeys/ArkanaKeysInterfaces`)
   - Factory
   - Firebase/Crashlytics
   - KeychainAccess
@@ -152,17 +147,9 @@ SPEC REPOS:
     - Wormholy
     - xcbeautify
 
-EXTERNAL SOURCES:
-  ArkanaKeys:
-    :path: "./ArkanaKeys/ArkanaKeys"
-  ArkanaKeysInterfaces:
-    :path: "./ArkanaKeys/ArkanaKeysInterfaces"
-
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   AlertToast: e8db15da727beff75500bcf33a78cd617f408fa1
-  ArkanaKeys: 356555f467c55ae40ba074c1b4d9cb5c38a55f3d
-  ArkanaKeysInterfaces: 81d21923368b058e2b6fd932ec96855166ef6d19
   Factory: 9d20d8cb56fc44b341d6dad1cf67dc93e9ae7788
   Firebase: 374a441a91ead896215703a674d58cdb3e9d772b
   FirebaseCore: 48b0dd707581cf9c1a1220da68223fb0a562afaa
@@ -191,6 +178,6 @@ SPEC CHECKSUMS:
   Wormholy: ab1c8c2f02f58587a0941deb0088555ffbf039a1
   xcbeautify: 6e2f57af5c3a86d490376d5758030a8dcc201c1b
 
-PODFILE CHECKSUM: a90ea46701be794acae895bfc77fce62595e98bb
+PODFILE CHECKSUM: 9fd45fe017176da61b2292c2bfa1f2bfd3de4d30
 
 COCOAPODS: 1.16.2
