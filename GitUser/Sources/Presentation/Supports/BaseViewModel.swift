@@ -52,7 +52,7 @@ open class BaseViewModel: ObservableObject {
     func hideError() {
         error = .none
     }
-    
+
     func injectLoading<T: Publisher>(
         publisher: T
     ) -> Publishers.HandleEvents<T> {

@@ -51,9 +51,10 @@ class GitUserDetailViewModel: BaseViewModel {
     private func fetchRemote() {
         let execute: (Bool) -> AnyPublisher = { isEmpty in
             let publisher = self.getRemoteUseCase.invoke(userName: self.getLogin())
-            return isEmpty ? self.injectLoading(publisher: publisher).eraseToAnyPublisher() : publisher.eraseToAnyPublisher()
+            return isEmpty ? self.injectLoading(publisher: publisher).eraseToAnyPublisher() : publisher
+                .eraseToAnyPublisher()
         }
-        
+
         execute(isDataEmpty())
             .subscribe(on: dispatchQueueProvider.backgroundQueue)
             .receive(on: dispatchQueueProvider.mainQueue)
@@ -89,14 +90,14 @@ class GitUserDetailViewModel: BaseViewModel {
             #endif
         }
     }
-    
+
     override func onErrorPrimaryAction(errorState: ErrorState) {
         switch errorState {
-            case .messageError(let messageError):
-                if messageError.primaryButton == R.string.localizable.common_retry() {
-                    fetchRemote()
-                }
-            default: break
+        case let .messageError(messageError):
+            if messageError.primaryButton == R.string.localizable.common_retry() {
+                fetchRemote()
+            }
+        default: break
         }
         super.onErrorPrimaryAction(errorState: errorState)
     }
