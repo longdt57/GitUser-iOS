@@ -65,14 +65,14 @@ class GitUserListViewModel: BaseViewModel {
     private func getSince() -> Int {
         return uiModel.users.count
     }
-    
+
     override func onErrorPrimaryAction(errorState: ErrorState) {
         switch errorState {
-            case .messageError(let messageError):
-                if messageError.primaryButton == R.string.localizable.common_retry() {
-                    handleAction(action: .loadMore)
-                }
-            default: break
+        case let .messageError(messageError):
+            if messageError.primaryButton == R.string.localizable.common_retry() {
+                handleAction(action: .loadMore)
+            }
+        default: break
         }
         super.onErrorPrimaryAction(errorState: errorState)
     }

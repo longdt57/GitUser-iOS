@@ -37,11 +37,11 @@ extension View {
             set: { _ in }
         )
 
-        return self.alert(isPresented: isPresenting) {
+        return alert(isPresented: isPresenting) {
             guard case let .messageError(messageError) = error.wrappedValue else {
                 return Alert(title: Text("Unexpected Error"), message: nil, dismissButton: .default(Text("OK")))
             }
-            
+
             if let secondaryButton = messageError.secondaryButton {
                 return Alert(
                     title: Text(messageError.title),
