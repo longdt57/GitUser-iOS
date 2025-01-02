@@ -29,6 +29,9 @@
 		C2A78C62ECBC4B4CB35D0C15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB5AB651892C93E99ABCDDA /* LaunchScreen.storyboard */; };
 		C2D5C93EF57A940DA198CD2C /* Pods_GitUser_GitUserKIFUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3477C0334DA89FADCC1C9A93 /* Pods_GitUser_GitUserKIFUITests.framework */; };
 		C6DE571953008C32EC64FDD4 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C101090EAB731425E86F0737 /* ApplicationSpec.swift */; };
+		D13A78222D264F0500882BF5 /* GitUserLocalSourceImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13A781F2D264EDD00882BF5 /* GitUserLocalSourceImplTests.swift */; };
+		D13A78252D26518B00882BF5 /* GitUserDetailLocalSourceImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13A78232D26518400882BF5 /* GitUserDetailLocalSourceImplTests.swift */; };
+		D13A78292D26526700882BF5 /* GitUserConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13A78272D26525C00882BF5 /* GitUserConfigurationTests.swift */; };
 		D18191962D22C7AB003103D1 /* GitUserConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18191952D22C7AB003103D1 /* GitUserConfiguration.swift */; };
 		D181919D2D22CAF3003103D1 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D181919B2D22CAF2003103D1 /* .gitkeep */; };
 		D181919F2D22CB5F003103D1 /* GitUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181919E2D22CB5F003103D1 /* GitUser.swift */; };
@@ -279,6 +282,9 @@
 		C101090EAB731425E86F0737 /* ApplicationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSpec.swift; sourceTree = "<group>"; };
 		C5899A700239BD329BC3FEB3 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
 		CF991D11A6F82A6F3C0BFCBE /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D13A781F2D264EDD00882BF5 /* GitUserLocalSourceImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserLocalSourceImplTests.swift; sourceTree = "<group>"; };
+		D13A78232D26518400882BF5 /* GitUserDetailLocalSourceImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserDetailLocalSourceImplTests.swift; sourceTree = "<group>"; };
+		D13A78272D26525C00882BF5 /* GitUserConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserConfigurationTests.swift; sourceTree = "<group>"; };
 		D18191952D22C7AB003103D1 /* GitUserConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserConfiguration.swift; sourceTree = "<group>"; };
 		D181919B2D22CAF2003103D1 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D181919E2D22CB5F003103D1 /* GitUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUser.swift; sourceTree = "<group>"; };
@@ -615,9 +621,10 @@
 		5FCF0632CAE5108225AD3BF7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6FA2DAA70DC31726BD1932B1 /* NetworkAPI */,
+				D13A781E2D264ED400882BF5 /* Local */,
 				D181927E2D249BD2003103D1 /* Repositories */,
 				80FF311F9DA6581751F350C8 /* Dummies */,
-				642FF05F266957F0D7CCDC3D /* Specs */,
 				A84E9AB44A73559B1414A56B /* Utilities */,
 			);
 			path = Sources;
@@ -632,14 +639,6 @@
 				D9226AC1302612CD0413F9CA /* DomainTests.plist */,
 			);
 			path = InfoPlists;
-			sourceTree = "<group>";
-		};
-		642FF05F266957F0D7CCDC3D /* Specs */ = {
-			isa = PBXGroup;
-			children = (
-				6FA2DAA70DC31726BD1932B1 /* NetworkAPI */,
-			);
-			path = Specs;
 			sourceTree = "<group>";
 		};
 		68E6D5F0E8451846EEFF5674 /* Frameworks */ = {
@@ -674,6 +673,7 @@
 		6FA2DAA70DC31726BD1932B1 /* NetworkAPI */ = {
 			isa = PBXGroup;
 			children = (
+				D13A78262D26525100882BF5 /* RequestConfiguration */,
 				72479EAD1DB498E5351B8CA9 /* NetworkAPITests.swift */,
 			);
 			path = NetworkAPI;
@@ -882,6 +882,23 @@
 				EA05A82DDF260FEB7A43E410 /* LaunchScreen */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D13A781E2D264ED400882BF5 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				D13A781F2D264EDD00882BF5 /* GitUserLocalSourceImplTests.swift */,
+				D13A78232D26518400882BF5 /* GitUserDetailLocalSourceImplTests.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		D13A78262D26525100882BF5 /* RequestConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				D13A78272D26525C00882BF5 /* GitUserConfigurationTests.swift */,
+			);
+			path = RequestConfiguration;
 			sourceTree = "<group>";
 		};
 		D18191922D22C69C003103D1 /* RequestConfiguration */ = {
@@ -1847,9 +1864,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D13A78222D264F0500882BF5 /* GitUserLocalSourceImplTests.swift in Sources */,
 				D181929E2D258356003103D1 /* MockError.swift in Sources */,
+				D13A78292D26526700882BF5 /* GitUserConfigurationTests.swift in Sources */,
 				D181928C2D256E53003103D1 /* GitUserRepositoryImplTests.swift in Sources */,
 				BE147516B68ECA5C9F817C67 /* DummyNetworkModel.swift in Sources */,
+				D13A78252D26518B00882BF5 /* GitUserDetailLocalSourceImplTests.swift in Sources */,
 				F7627D238BF02375017366DA /* DummyRequestConfiguration.swift in Sources */,
 				A248AAF1EFA844AFC7A55808 /* NetworkAPITests.swift in Sources */,
 				D181928E2D2574F6003103D1 /* GitUserDetailRepositoryImplTests.swift in Sources */,

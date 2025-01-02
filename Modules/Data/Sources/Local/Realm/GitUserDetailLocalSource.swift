@@ -16,9 +16,13 @@ public protocol GitUserDetailLocalSource {
 public class GitUserDetailLocalSourceImpl: GitUserDetailLocalSource {
     public init() {}
 
+    public func getRealm() throws -> Realm {
+        try! Realm()
+    }
+
     // Fetch the user detail by login
     public func getUserDetailByLogin(login: String) throws -> GitUserDetail? {
-        let realm = try! Realm()
+        let realm = try! getRealm()
         // Retrieve the GitUserDetail object where login matches
         return realm.objects(GitUserDetail.self).filter("login == %@", login).first
     }
@@ -26,7 +30,7 @@ public class GitUserDetailLocalSourceImpl: GitUserDetailLocalSource {
     // Save the user detail to the local database
     public func upsert(userDetail: GitUserDetail) {
         do {
-            let realm = try Realm()
+            let realm = try getRealm()
             // Write to the Realm database
             try! realm.write {
                 realm.add(userDetail, update: .modified)

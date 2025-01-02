@@ -17,8 +17,12 @@ public class GitUserLocalSourceImpl: GitUserLocalSource {
 
     public init() {}
 
+    public func getRealm() throws -> Realm {
+        try! Realm()
+    }
+
     public func getUsers(since: Int, perPage: Int) throws -> [GitUser] {
-        let realm = try! Realm()
+        let realm = try! getRealm()
 
         // Fetch all results sorted by 'id'
         let sortedResults = realm.objects(GitUser.self)
@@ -41,7 +45,7 @@ public class GitUserLocalSourceImpl: GitUserLocalSource {
 
     public func upsert(users: [GitUser]) {
         do {
-            let realm = try Realm()
+            let realm = try getRealm()
             try! realm.write {
                 for user in users {
                     realm.add(user, update: .modified)
