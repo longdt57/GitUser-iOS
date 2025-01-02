@@ -5,8 +5,8 @@
 |-|-|
 | <img src="screenshots/git_user_list.png" width=300 /> | <img src="screenshots/git_user_detail.png" width=300 /> |
 
-## Test Result
-<img src="screenshots/test_result.png"/>
+## Code Coverage Report
+<img src="screenshots/code_coverage_report.png"/>
 
 ## Bitrise: 
 Project: https://app.bitrise.io/app/3acbfd1d-8f9c-4901-a666-db389d71edb6
