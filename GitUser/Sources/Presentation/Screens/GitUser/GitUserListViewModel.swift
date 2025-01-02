@@ -38,10 +38,8 @@ class GitUserListViewModel: BaseViewModel {
     private func loadMore() {
         if isLoading() { return }
 
-        showLoading()
-
         // Call the useCase to fetch more users
-        useCase.invoke(since: getSince(), perPage: GitUserListViewModel.PERPAGE)
+        injectLoading(publisher: useCase.invoke(since: getSince(), perPage: GitUserListViewModel.PERPAGE))
             .subscribe(on: dispatchQueueProvider.backgroundQueue)
             .receive(on: dispatchQueueProvider.mainQueue)
             .sink(
@@ -52,7 +50,6 @@ class GitUserListViewModel: BaseViewModel {
                     case let .failure(error):
                         self?.handleError(error: error)
                     }
-                    self?.hideLoading()
                 },
                 receiveValue: { [weak self] result in
                     self?.handleSuccess(result)
@@ -67,6 +64,17 @@ class GitUserListViewModel: BaseViewModel {
 
     private func getSince() -> Int {
         return uiModel.users.count
+    }
+    
+    override func onErrorPrimaryAction(errorState: ErrorState) {
+        switch errorState {
+            case .messageError(let messageError):
+                if messageError.primaryButton == R.string.localizable.common_retry() {
+                    handleAction(action: .loadMore)
+                }
+            default: break
+        }
+        super.onErrorPrimaryAction(errorState: errorState)
     }
 
     // Define constant for PER_PAGE

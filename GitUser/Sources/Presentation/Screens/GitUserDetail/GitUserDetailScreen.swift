@@ -24,9 +24,9 @@ struct GitUserDetailScreen: View {
         .showError(
             error: $viewModel.error,
             primaryAction: {
-                viewModel.onErrorPrimaryAction()
+                viewModel.onErrorPrimaryAction(errorState: $0)
             }, secondaryAction: {
-                viewModel.onErrorSecondaryAction()
+                viewModel.onErrorSecondaryAction(errorState: $0)
             }
         )
         .onAppear {

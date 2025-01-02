@@ -40,9 +40,7 @@ class GitUserDetailViewModel: BaseViewModel {
         getLocalUseCase.invoke(userName: getLogin())
             .receive(on: dispatchQueueProvider.backgroundQueue)
             .sink(
-                receiveCompletion: { [weak self] _ in
-                    self?.hideLoading()
-                },
+                receiveCompletion: { _ in },
                 receiveValue: { [weak self] result in
                     self?.handleSuccess(result: result)
                 }
@@ -51,10 +49,12 @@ class GitUserDetailViewModel: BaseViewModel {
     }
 
     private func fetchRemote() {
-        if isDataEmpty() {
-            showLoading()
+        let execute: (Bool) -> AnyPublisher = { isEmpty in
+            let publisher = self.getRemoteUseCase.invoke(userName: self.getLogin())
+            return isEmpty ? self.injectLoading(publisher: publisher).eraseToAnyPublisher() : publisher.eraseToAnyPublisher()
         }
-        getRemoteUseCase.invoke(userName: getLogin())
+        
+        execute(isDataEmpty())
             .subscribe(on: dispatchQueueProvider.backgroundQueue)
             .receive(on: dispatchQueueProvider.mainQueue)
             .sink(
@@ -62,7 +62,6 @@ class GitUserDetailViewModel: BaseViewModel {
                     if case let .failure(error) = completion {
                         self?.handleError(error: error)
                     }
-                    self?.hideLoading()
                 },
                 receiveValue: { [weak self] result in
                     self?.handleSuccess(result: result)
@@ -89,6 +88,17 @@ class GitUserDetailViewModel: BaseViewModel {
                 print(error)
             #endif
         }
+    }
+    
+    override func onErrorPrimaryAction(errorState: ErrorState) {
+        switch errorState {
+            case .messageError(let messageError):
+                if messageError.primaryButton == R.string.localizable.common_retry() {
+                    fetchRemote()
+                }
+            default: break
+        }
+        super.onErrorPrimaryAction(errorState: errorState)
     }
 
     private func isDataEmpty() -> Bool {

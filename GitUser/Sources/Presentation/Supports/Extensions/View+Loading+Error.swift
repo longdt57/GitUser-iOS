@@ -15,9 +15,7 @@ extension View {
             get: {
                 if case .loading = loadingState.wrappedValue { return true } else { return false }
             },
-            set: { isLoading in
-                loadingState.wrappedValue = isLoading ? .loading() : .none
-            }
+            set: { _ in }
         )
 
         let message = loadingState.wrappedValue.message
@@ -29,40 +27,43 @@ extension View {
 
     func showError(
         error: Binding<ErrorState>,
-        primaryAction: (() -> Void)? = {},
-        secondaryAction: (() -> Void)? = {}
+        primaryAction: @escaping ((ErrorState) -> Void),
+        secondaryAction: @escaping ((ErrorState) -> Void)
     ) -> some View {
         let isPresenting = Binding(
             get: {
                 if case .messageError = error.wrappedValue { return true } else { return false }
             },
-            set: { isErrorPresent in
-                if !isErrorPresent {
-                    error.wrappedValue = .none
-                }
-            }
+            set: { _ in }
         )
 
-        return alert(isPresented: isPresenting) {
-            switch error.wrappedValue {
-            case .none:
-                return Alert(title: Text(""), message: nil, dismissButton: .default(Text("")))
-
-            case let .messageError(messageError: messageError):
-                if let secondaryButton = messageError.secondaryButton {
-                    return Alert(
-                        title: Text(messageError.title),
-                        message: Text(messageError.message),
-                        primaryButton: .default(Text(messageError.primaryButton), action: primaryAction),
-                        secondaryButton: .cancel(Text(secondaryButton), action: secondaryAction)
+        return self.alert(isPresented: isPresenting) {
+            guard case let .messageError(messageError) = error.wrappedValue else {
+                return Alert(title: Text("Unexpected Error"), message: nil, dismissButton: .default(Text("OK")))
+            }
+            
+            if let secondaryButton = messageError.secondaryButton {
+                return Alert(
+                    title: Text(messageError.title),
+                    message: Text(messageError.message),
+                    primaryButton: .default(
+                        Text(messageError.primaryButton),
+                        action: { primaryAction(error.wrappedValue) }
+                    ),
+                    secondaryButton: .cancel(
+                        Text(secondaryButton),
+                        action: { secondaryAction(error.wrappedValue) }
                     )
-                } else {
-                    return Alert(
-                        title: Text(messageError.title),
-                        message: Text(messageError.message),
-                        dismissButton: .default(Text(messageError.primaryButton), action: primaryAction)
+                )
+            } else {
+                return Alert(
+                    title: Text(messageError.title),
+                    message: Text(messageError.message),
+                    dismissButton: .default(
+                        Text(messageError.primaryButton),
+                        action: { primaryAction(error.wrappedValue) }
                     )
-                }
+                )
             }
         }
     }

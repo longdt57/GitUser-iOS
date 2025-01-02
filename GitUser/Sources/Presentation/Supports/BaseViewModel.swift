@@ -52,12 +52,25 @@ open class BaseViewModel: ObservableObject {
     func hideError() {
         error = .none
     }
+    
+    func injectLoading<T: Publisher>(
+        publisher: T
+    ) -> Publishers.HandleEvents<T> {
+        return publisher.handleEvents(
+            receiveSubscription: { _ in
+                self.showLoading()
+            },
+            receiveCompletion: { _ in
+                self.hideLoading()
+            }
+        )
+    }
 
-    func onErrorPrimaryAction() {
+    func onErrorPrimaryAction(errorState: ErrorState) {
         hideError()
     }
 
-    func onErrorSecondaryAction() {
+    func onErrorSecondaryAction(errorState: ErrorState) {
         hideError()
     }
 

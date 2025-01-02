@@ -27,10 +27,10 @@ struct GitUserListScreen: View {
             .showLoading(loadingState: $viewModel.loading)
             .showError(
                 error: $viewModel.error,
-                primaryAction: {
-                    viewModel.onErrorPrimaryAction()
-                }, secondaryAction: {
-                    viewModel.onErrorSecondaryAction()
+                primaryAction: { errorState in
+                    viewModel.onErrorPrimaryAction(errorState: errorState)
+                }, secondaryAction: { errorState in
+                    viewModel.onErrorSecondaryAction(errorState: errorState)
                 }
             )
             .onAppear {

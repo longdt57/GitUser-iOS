@@ -116,7 +116,7 @@ class BaseViewModelTests: XCTestCase {
         viewModel.handleError(error: NetworkAPIError.noConnectivity) // Set error state
 
         // Act
-        viewModel.onErrorPrimaryAction()
+        viewModel.onErrorPrimaryAction(errorState: ErrorState.messageError(.network()))
 
         // Assert
         XCTAssertEqual(viewModel.error, .none)
@@ -127,7 +127,7 @@ class BaseViewModelTests: XCTestCase {
         viewModel.handleError(error: NetworkAPIError.noConnectivity) // Set error state
 
         // Act
-        viewModel.onErrorSecondaryAction()
+        viewModel.onErrorSecondaryAction(errorState: ErrorState.messageError(.network()))
 
         // Assert
         XCTAssertEqual(viewModel.error, .none)
