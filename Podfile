@@ -48,6 +48,7 @@ end
 
 def data_dependencies
   pod 'Alamofire'
+  pod 'Realm'
   pod 'RealmSwift'
 end
 

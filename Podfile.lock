@@ -107,6 +107,7 @@ DEPENDENCIES:
   - Kingfisher
   - OHHTTPStubs/Swift
   - R.swift
+  - Realm
   - RealmSwift
   - Resolver
   - Sourcery
@@ -178,6 +179,6 @@ SPEC CHECKSUMS:
   Wormholy: ab1c8c2f02f58587a0941deb0088555ffbf039a1
   xcbeautify: 6e2f57af5c3a86d490376d5758030a8dcc201c1b
 
-PODFILE CHECKSUM: 9fd45fe017176da61b2292c2bfa1f2bfd3de4d30
+PODFILE CHECKSUM: 07c365836bb4b051c00ee59a91809d7618be43e7
 
 COCOAPODS: 1.16.2
